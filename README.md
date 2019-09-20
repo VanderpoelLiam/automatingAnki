@@ -48,3 +48,6 @@ Or, copy `mutig` to the clipboard and enter:
 `python3 main.py mutig`
 
 The terminal gives instructions, so simply follow the given prompts.
+
+## Note
+In the GIF above, I select the terminal before pressing enter or typing y or n. But this is not necessary, the program listens for certain keystrokes, so when I am using the program I do not need to open the terminal unless I forget which step I am on.
