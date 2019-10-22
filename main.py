@@ -5,27 +5,20 @@
 
 import pyperclip
 import sys
-import pyautogui
 import time
-from selenium import webdriver
-from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 from pynput import mouse
 from pynput import keyboard
 from re import search
+
 from webscraping import getSoup, getIpa, getWordClass, getWordForms
 from ankiInteractions import pasteFront, pasteDefinition, pasteBack, \
     pasteFullSentence, pasteExtraInfo, pasteAdd2Cards, onClick
-
-GET_2_CARDS
+from browser import getDriver, loadWordReference
 
 # Website URLs
 WIKITIONARY = 'https://de.wiktionary.org/wiki/'
 LINGUEE = 'https://www.linguee.de/deutsch-englisch/search?source=auto&query='
 FREE_DICT = 'https://de.thefreedictionary.com/'
-WORD_REFERENCE = 'https://www.wordreference.com/deen/'
 GOOGLE_TRANSLATE = 'https://translate.google.ca/#view=home&op=translate&sl=de&tl=en&text='
 
 VERB = 1
@@ -37,6 +30,7 @@ KEYS_SEEN = set()
 COPY_OCCURED = False
 CHOICE = "y"
 
+# TODO - Continue migration of brower relevant code to browser.py
 def queryYesNo(question, default="y"):
     valid = {"y": True, "n": False}
     prompt = " [y/n]\n"
@@ -55,24 +49,6 @@ def getWord():
         # Get word from clipboard.
         word = pyperclip.paste()
     return(word)
-
-def setBrowserLocation(driver):
-    driver.set_window_position(0, 0)
-    driver.set_window_size(960, 1053)
-
-def getDriver():
-    capa = DesiredCapabilities.FIREFOX
-    capa["pageLoadStrategy"] = "none"
-    driver = webdriver.Firefox(desired_capabilities=capa)
-    setBrowserLocation(driver)
-    return(driver)
-
-def loadWordReference(driver, word):
-    wordReferenceSite = WORD_REFERENCE + word
-    wait = WebDriverWait(driver, 5)
-    driver.get(wordReferenceSite)
-    wait.until(EC.presence_of_element_located((By.ID, 'articleWRD')))
-    driver.execute_script("window.stop();")
 
 def blankOutWord(word, sentence):
     return(sentence.replace(word, "___"))
@@ -202,7 +178,8 @@ def main(word, driver):
 
     blankedOutSentence = blankOutWord(backContent, sentence)
 
-    backContent(sentence)
+    # TODO what does this next line do?
+    # backContent(sentence)
     pasteBack(backContent)
     getTranslation(sentence)
 

@@ -1,6 +1,6 @@
 #! python3
 
-# webscraping.py - Handles acessing the internet and processing the html
+# webscraping.py - Handles scraping from websites and processing the html
 
 import requests
 import bs4

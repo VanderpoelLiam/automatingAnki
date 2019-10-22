@@ -23,10 +23,19 @@ def main():
     f.close()
     #############
 
-    exercises = getParsedExercises(8, 11, exerciseSoup, solutionSoup)
-    # TODO paste to anki
-    import pprint as pp
-    pp.pprint(exercises)
+    baseOffset = 8
+    numberExercises = 11
+    exercises = getParsedExercises(baseOffset, numberExercises, exerciseSoup, solutionSoup)
+
+
+    
+    for i in range(numberExercises):
+        pasteFullSentence(exercises["fullSentence"][i])
+        pasteBack(exercises["back"][i])
+        pasteDefinition(exercises["frontDefn"][i])
+
+        pasteFront(exercises["frontBlanked"][i])
+        break
 
 if __name__ == '__main__':
     main()
