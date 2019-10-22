@@ -1,4 +1,3 @@
-
 #! python3
 
 # german.py - Assists creation of german anki card using word from the command
@@ -6,8 +5,6 @@
 
 import pyperclip
 import sys
-import requests
-import bs4
 import pyautogui
 import time
 from selenium import webdriver
@@ -18,21 +15,18 @@ from selenium.webdriver.common.by import By
 from pynput import mouse
 from pynput import keyboard
 from re import search
+from webscraping import getSoup, getIpa, getWordClass, getWordForms
+from ankiInteractions import pasteFront, pasteDefinition, pasteBack, \
+    pasteFullSentence, pasteExtraInfo, pasteAdd2Cards, onClick
 
+GET_2_CARDS
+
+# Website URLs
 WIKITIONARY = 'https://de.wiktionary.org/wiki/'
 LINGUEE = 'https://www.linguee.de/deutsch-englisch/search?source=auto&query='
 FREE_DICT = 'https://de.thefreedictionary.com/'
 WORD_REFERENCE = 'https://www.wordreference.com/deen/'
 GOOGLE_TRANSLATE = 'https://translate.google.ca/#view=home&op=translate&sl=de&tl=en&text='
-
-FRONT = (1000, 163)
-DEFINITION = (1000, 283)
-BACK = (1000, 340)
-FULL_SENTENCE = (1000, 401)
-EXTRA_INFO = (1000, 460)
-GET_2_CARDS = (1000, 522)
-ADD = (1695, 1055)
-HORIZONTAL_MIDPOINT = 960
 
 VERB = 1
 NOUN = 2
@@ -43,84 +37,12 @@ KEYS_SEEN = set()
 COPY_OCCURED = False
 CHOICE = "y"
 
-
 def queryYesNo(question, default="y"):
     valid = {"y": True, "n": False}
     prompt = " [y/n]\n"
     sys.stdout.write(question + prompt)
     listenForChoice()
     return valid[CHOICE]
-
-def getSoup(site):
-    response = requests.get(site)
-    soup = bs4.BeautifulSoup(response.text, features="html.parser")
-    return(soup)
-
-def getIpa(wiktionarySoup):
-    ipa = wiktionarySoup.select('.ipa')[0].text
-    return(ipa)
-
-def getWordClassIndicator(wiktionarySoup):
-    return(wiktionarySoup.h3.text)
-
-def getWordClass(wiktionarySoup):
-    wordClassIndicator = getWordClassIndicator(wiktionarySoup)
-    if "Substantiv" in wordClassIndicator:
-        return(NOUN)
-    elif "Verb" in wordClassIndicator:
-        return(VERB)
-    else:
-        return(OTHER_WORD_CLASS)
-
-def getWorttrennung(wiktionarySoup):
-    worttrennung = wiktionarySoup.find(string="Worttrennung:").find_next('dd')
-    return(worttrennung.text)
-
-def formatVerb(worttrennung):
-    verbForms = worttrennung.split(',')
-
-    infinitif = verbForms[0]
-    praeterutum = verbForms[1].split(":")[1].strip()
-    partizip = verbForms[2].split(":")[1].strip()
-
-    verbForms = infinitif + '\n' + praeterutum + '\n' + partizip + "\n"
-    return(verbForms)
-
-def getGender(wiktionarySoup):
-    wordClassIndicator = getWordClassIndicator(wiktionarySoup)
-    genderInfo = wordClassIndicator.split(',')[1].strip()
-    gender = genderInfo.split('[')[0]
-    if gender == "n":
-        return("das")
-    elif gender == "f":
-        return("die")
-    elif gender == "m":
-        return("der")
-    else:
-        raise ValueError('Gender is not one of n, f, m.')
-
-def formatNoun(gender, worttrennung):
-    nounForms = worttrennung.split(',')
-    singular = gender + " " + nounForms[0]
-
-    if nounForms[1].strip() == "kein Plural":
-        plural = "kein Plural"
-    else:
-        plural = nounForms[1].split(":")[1].strip()
-
-    wordForms = singular + '\n' + plural + "\n"
-    return(wordForms)
-
-def getWordForms(wiktionarySoup, wordClass):
-    worttrennung = getWorttrennung(wiktionarySoup)
-
-    if wordClass == VERB:
-        wordForms = formatVerb(worttrennung)
-    if wordClass == NOUN:
-        gender = getGender(wiktionarySoup)
-        wordForms = formatNoun(gender, worttrennung)
-
-    return(wordForms)
 
 def clearScreen():
     print("\033[H\033[J")
@@ -135,15 +57,6 @@ def getWord():
     return(word)
 
 def setBrowserLocation(driver):
-    # Moves window into right spot normal I3
-    # pyautogui.hotkey('alt', 'r')
-    # pyautogui.press('down')
-    # pyautogui.press('down')
-    # pyautogui.press('down')
-    # pyautogui.press('esc')
-    # pyautogui.hotkey('alt', 'up')
-
-    # # Moves window into right spot normal UBUNTU
     driver.set_window_position(0, 0)
     driver.set_window_size(960, 1053)
 
@@ -160,11 +73,6 @@ def loadWordReference(driver, word):
     driver.get(wordReferenceSite)
     wait.until(EC.presence_of_element_located((By.ID, 'articleWRD')))
     driver.execute_script("window.stop();")
-
-def clickAndPaste(location, text):
-    pyautogui.click(location)
-    pyperclip.copy(text)
-    pyautogui.hotkey('ctrl', 'v')
 
 def blankOutWord(word, sentence):
     return(sentence.replace(word, "___"))
@@ -188,14 +96,6 @@ def getDefinition(driver, sites):
     object = "a definition"
     definition = copyFromSite(driver, sites, object)
     return(definition)
-
-def onClick(x, y, button, pressed):
-    if button == mouse.Button.left:
-       if not pressed:
-        if x > HORIZONTAL_MIDPOINT:
-            pyautogui.moveTo(ADD, duration=1)
-            pyautogui.click()
-            return False
 
 def clickAddWhenDropImage():
     with mouse.Listener(on_click=onClick) as listener:
@@ -280,7 +180,7 @@ def main(word, driver):
 
     make2Cards = queryYesNo("Make 2 cards?")
     if (make2Cards):
-        clickAndPaste(GET_2_CARDS, "y")
+        pasteAdd2Cards()
 
     wiktionarySoup = getSoup(wikitionarySite)
     extraInfo = ""
@@ -290,7 +190,7 @@ def main(word, driver):
         extraInfo = getWordForms(wiktionarySoup, wordClass)
 
     extraInfo += getIpa(wiktionarySoup)
-    clickAndPaste(EXTRA_INFO, extraInfo)
+    pasteExtraInfo(extraInfo)
 
     sentence = getSentence(driver, sentenceSites)
     if wordInSentence(word, sentence):
@@ -302,15 +202,15 @@ def main(word, driver):
 
     blankedOutSentence = blankOutWord(backContent, sentence)
 
-    clickAndPaste(FULL_SENTENCE, sentence)
-    clickAndPaste(BACK, backContent)
+    backContent(sentence)
+    pasteBack(backContent)
     getTranslation(sentence)
 
     needDefintion = queryYesNo("Do I need a definition?")
     if (needDefintion):
         definition = getDefinition(driver, definitionSites)
-        clickAndPaste(DEFINITION, definition)
-    clickAndPaste(FRONT, blankedOutSentence)
+        pasteDefinition(definition)
+    pasteFront(blankedOutSentence)
     if (needDefintion):
         getTranslation(definition)
 
@@ -323,8 +223,6 @@ def main(word, driver):
 
 
 if __name__ == '__main__':
-    # Number seconds to wait between actions
-    pyautogui.PAUSE = 0.3
     try:
         driver = getDriver()
         word = getWord()

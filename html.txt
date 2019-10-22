@@ -1,0 +1,239 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <meta name=viewport content="width=device-width, initial-scale=1">
+ <title>German exercises: Adjective endings</title>
+   <META NAME="Language" CONTENT="EN"><link rel="alternate" hreflang="en" href="https://german.net/exercises/adjectives/endings/"><link rel="alternate" hreflang="pt" href="https://alemao.org/exercicios/adjetivos/terminacoes/"><link rel="alternate" hreflang="es" href="https://aleman.org/ejercicios/adjetivos/terminacion/"><link rel="alternate" hreflang="fr" href="https://allemand.org/exercices/adjectifs/terminaison/"><link rel="alternate" hreflang="cs" href="https://nemecky.org/cviceni/pridavna-jmena/koncovky/"> <meta property="og:url" content="http://german.net/exercises/adjectives/endings/">
+ <link rel="stylesheet" type="text/css" href="../../../design.css">
+ <script type="text/javascript" src="../../../files/main.js"></script> <style>
+ .german-responsive { width: 728px; height: 90px; }
+ @media(max-width: 1290px) { .german-responsive { width: 468px; height: 60px; } }
+ @media(max-width: 825px) { .german-responsive { width: 728px; height: 90px; } }
+ @media(max-width:  770px) { .german-responsive { width: 468px; height: 60px; } }
+ @media(max-width:  522px) { .german-responsive { width: 320px; height: 50px; } }
+ </style>
+   </style>
+ </head>
+
+<body  >
+
+<div id="header">
+ <ul class="navtoggle"><li class="navtoggle-left"><img src="../../../images/menu.gif" alt="navigation"></li></ul><a href="https://german.net/"><img src="../../../german.gif" width="369" height="78" alt="German" class="logo"><img src="../../../german-mobile.gif" alt="German" class="logo-mobile"></a>
+   <div id="header_login">
+  <form action="../../../script.login.php" method="post" name="form2">
+  <fieldset>
+  <legend>Login</legend>
+
+  <div class="innerbox">
+   <label>Username</label>
+   <input type="text" name="username" class="loginbox">
+  </div><div class="innerbox">
+   <label>Password</label>
+   <input type="password" name="userpass" class="loginbox">
+  </div><div class="innerbox2">
+  <input type="submit" class="button loginbutton" value="Login">
+  </div>
+  <br style="clear:both">
+
+  <div class="information">
+   Save your learning progress: <strong>100% free</strong>: <a href="../../../register/">Register</a>
+  </div>
+
+   <input type="hidden" name="referral" value="">
+   </fieldset>
+  </form>
+ </div>
+
+ <div id="top_navigation">
+  <a href="../../../" class="index-link">Index</a><a href="../../../exercises/" class="chosen">Exercises</a><a href="../../../vocabulary/" >Vocabulary</a><a href="../../../verbs/conjugation/" >Conjugation</a><a href="../../../reading/" >Reading</a>
+ </div>
+</div>
+
+<div class="navigation leftnav sb-static">
+
+  <div class="button-account-mobile"><a href="../../../login/" class="greybutton"><span class="register">Login</a> <a href="../../../register/" class="greybutton"><span class="register">Sign up</a></div>
+
+  <a href="../../../exercises/" class="left_main_button_chosen">Exercises</a>
+  <a href="../../../exercises/tenses/" class="left_button">Tenses & moods</a><a href="../../../exercises/verbs/" class="left_button">Verbs & conjugation</a><a href="../../../exercises/cases/" class="left_button">Cases & declension</a><a href="../../../exercises/nouns/" class="left_button">Nouns & articles</a><a href="../../../exercises/adjectives/" class="left_button_chosen">Adjectives</a>    <div class="left_subbox"><a href="../../../exercises/adjectives/opposites/" class="left_link">Opposites</a><a href="../../../exercises/adjectives/adjective-declension/" class="left_link">Declension</a><a href="../../../exercises/adjectives/endings/" class="left_link_chosen">Endings</a><a href="../../../exercises/adjectives/superlative/" class="left_link">Superlative</a><a href="../../../exercises/adjectives/comparative/" class="left_link">Comparative</a><a href="../../../exercises/adjectives/comparative-superlative/" class="left_link">Comparative & superlative</a>    </div>
+
+   <a href="../../../exercises/numbers/" class="left_button">Numbers</a><a href="../../../exercises/pronouns/" class="left_button">Pronouns</a><a href="../../../exercises/adverbs/" class="left_button">Adverbs</a><a href="../../../exercises/prepositions/" class="left_button">Prepositions</a><a href="../../../exercises/conjunctions/" class="left_button">Conjunctions</a><a href="../../../exercises/sentences/" class="left_button">Sentence construction</a><a href="../../../exercises/passive/" class="left_button">Passive voice</a>
+
+
+
+
+	<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a href="../../../verbs/conjugation/" class="left_main_button">Verb conjugation</a>
+
+  <a href="../../../vocabulary/" class="left_main_button">Vocabulary</a>
+
+
+
+
+
+  </div>
+
+
+
+<div id="body">
+ <div id="content">
+     <h1>Adjective endings</h1>
+
+     <p>For this exercise, you will be given a paragraph consisting of 10-20 sentences with missing words. In order to complete the exercise, you must fill in each blank with the correct German adjective. All adjectives must have the correct endings to match the gender and case of the rest of the sentence.</p>
+
+	 <div class="adbox"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- German Responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8569491625895390"
+     data-ad-slot="6236031576"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><!--variad--></div>
+
+     <h2>Exercises</h2>
+
+
+
+  <form name="form" method="post" accept-charset="utf-8"><div class="exercisebox"><b>Example</b>: Die <span class="resultbox1">schöne</span> Frau spricht mit dem <span class="resultbox1">lieben</span> Mann <span class="hint_text">[schön / lieb]</span><br><div style="margin-top:22px"></div>
+1.) Hattest du eine <input type="text" name="input1a" id="input1a" onClick="selecter('input1a')" onkeyup="changer('input1a')" autocomplete="off" class="textbox" style="margin-right:0px; width:80px"> <span class="hint_text"></span> Reise mit deinem <input type="text" name="input1b" id="input1b" onClick="selecter('input1b')" onkeyup="changer('input1b')" autocomplete="off" class="textbox" style="margin-right:0px; width:50px"> <span class="hint_text"></span>  Freund? <span class="hint_text">[schön / neu]</span><br><br>2.) Ich wünsche euch einen <input type="text" name="input2a" id="input2a" onClick="selecter('input2a')" onkeyup="changer('input2a')" autocomplete="off" class="textbox" style="margin-right:0px; width:80px"> <span class="hint_text"></span> Tag und eine <input type="text" name="input2b" id="input2b" onClick="selecter('input2b')" onkeyup="changer('input2b')" autocomplete="off" class="textbox" style="margin-right:0px; width:50px"> <span class="hint_text"></span> Nacht. <span class="hint_text">[schön / gut]</span><br><br>3.) Meine Tochter ist ein <input type="text" name="input3a" id="input3a" onClick="selecter('input3a')" onkeyup="changer('input3a')" autocomplete="off" class="textbox" style="margin-right:0px; width:50px"> <span class="hint_text"></span> Mädchen und hat einen <input type="text" name="input3b" id="input3b" onClick="selecter('input3b')" onkeyup="changer('input3b')" autocomplete="off" class="textbox" style="margin-right:0px; width:50px"> <span class="hint_text"></span> Freund. <span class="hint_text">[nett / nett]</span><br><br>4.) Berlin ist eine <input type="text" name="input4a" id="input4a" onClick="selecter('input4a')" onkeyup="changer('input4a')" autocomplete="off" class="textbox" style="margin-right:0px; width:80px"> <span class="hint_text"></span> Stadt und eine <input type="text" name="input4b" id="input4b" onClick="selecter('input4b')" onkeyup="changer('input4b')" autocomplete="off" class="textbox" style="margin-right:0px; width:50px"> <span class="hint_text"></span> Stadt. <span class="hint_text">[schön / groß]</span><br><br>5.) Das <input type="text" name="input5a" id="input5a" onClick="selecter('input5a')" onkeyup="changer('input5a')" autocomplete="off" class="textbox" style="margin-right:0px; width:50px"> <span class="hint_text"></span> Mädchen spielt mit seiner <input type="text" name="input5b" id="input5b" onClick="selecter('input5b')" onkeyup="changer('input5b')" autocomplete="off" class="textbox" style="margin-right:0px; width:50px"> <span class="hint_text"></span> Freundin. <span class="hint_text">[jung / neu]</span><br><br>6.) Wie heißt das <input type="text" name="input6a" id="input6a" onClick="selecter('input6a')" onkeyup="changer('input6a')" autocomplete="off" class="textbox" style="margin-right:0px; width:80px"> <span class="hint_text"></span> Lied? Das ist das <input type="text" name="input6b" id="input6b" onClick="selecter('input6b')" onkeyup="changer('input6b')" autocomplete="off" class="textbox" style="margin-right:0px; width:50px"> <span class="hint_text"></span> Lied von Elton John. <span class="hint_text">[schön / neu]</span><br><br>7.) Fährst du mit dem <input type="text" name="input7a" id="input7a" onClick="selecter('input7a')" onkeyup="changer('input7a')" autocomplete="off" class="textbox" style="margin-right:0px; width:80px"> <span class="hint_text"></span> Auto deines <input type="text" name="input7b" id="input7b" onClick="selecter('input7b')" onkeyup="changer('input7b')" autocomplete="off" class="textbox" style="margin-right:0px; width:80px"> <span class="hint_text"></span> Bruders? <span class="hint_text">[schnell / groß]</span><br><br>8.) Die eine Wurst gebe ich dem <input type="text" name="input8a" id="input8a" onClick="selecter('input8a')" onkeyup="changer('input8a')" autocomplete="off" class="textbox" style="margin-right:0px; width:80px"> <span class="hint_text"></span> Hund, die andere bekommt der <input type="text" name="input8b" id="input8b" onClick="selecter('input8b')" onkeyup="changer('input8b')" autocomplete="off" class="textbox" style="margin-right:0px; width:50px"> <span class="hint_text"></span> Hund. <span class="hint_text">[klein / groß]</span><br><br>9.) Deutschland ist ein <input type="text" name="input9a" id="input9a" onClick="selecter('input9a')" onkeyup="changer('input9a')" autocomplete="off" class="textbox" style="margin-right:0px; width:80px"> <span class="hint_text"></span> Land mit <input type="text" name="input9b" id="input9b" onClick="selecter('input9b')" onkeyup="changer('input9b')" autocomplete="off" class="textbox" style="margin-right:0px; width:50px"> <span class="hint_text"></span> Einwohnern. <span class="hint_text">[groß / viel]</span><br><br>10.) Eine Reise ist ein <input type="text" name="input10a" id="input10a" onClick="selecter('input10a')" onkeyup="changer('input10a')" autocomplete="off" class="textbox" style="margin-right:0px; width:80px"> <span class="hint_text"></span> Geschenk für <input type="text" name="input10b" id="input10b" onClick="selecter('input10b')" onkeyup="changer('input10b')" autocomplete="off" class="textbox" style="margin-right:0px; width:50px"> <span class="hint_text"></span> Menschen. <span class="hint_text">[schön / lieb]</span><br><br>11.) Es liegt Schnee auf dem <input type="text" name="input11a" id="input11a" onClick="selecter('input11a')" onkeyup="changer('input11a')" autocomplete="off" class="textbox" style="margin-right:0px; width:50px"> <span class="hint_text"></span> Berg und regnet auf dem <input type="text" name="input11b" id="input11b" onClick="selecter('input11b')" onkeyup="changer('input11b')" autocomplete="off" class="textbox" style="margin-right:0px; width:80px"> <span class="hint_text"></span> Hügel. <span class="hint_text">[hoch / klein]</span><br><br><input type="hidden" name="go" value="1">    <a href="#" onClick="document.form.submit()" class="button">Check answers >></a>
+    <input type="submit" name="Submit" value="Abschicken" style="width: 0px; height: 0px; border: none; padding:0px; margin:0px">   <input type="hidden" name="status" value="input1a"></form></div>
+
+<br>    <a href="../../../exercises/adjectives/" class="button">View all exercises of "Adjectives"</a>
+       <br style="clear:both">
+</div><div id="right">
+
+
+
+
+
+
+
+
+   <div id="box3">
+    <h4>Adding special characters</h4>
+
+	Ways to add vowels and the <i>ß</i> without German keyboard design:
+
+	<ul>
+	 <li>Click on the desired character below and it will appear in the active field.</li>
+	</ul>
+
+	<div style="padding-left:20px; padding-bottom:5px">
+	<a href="#" onClick="add_special('ä')" class="character_button">ä</a> <a href="#" class="character_button" onClick="add_special('ö')">ö</a> <a href="#" class="character_button" onClick="add_special('ü')">ü</a> <a href="#" class="character_button" onClick="add_special('ß')">ß</a><br style="clear:both">
+	</div>
+
+    <ul>
+	 <li>A faster and more convenient way: We associated each character with a number from 1 to 4, whereas <b>ä</b> is 1, <b>ö</b> is 2, <b>ü</b> is 3 and <b>ß</b> is 4. Just type in the number and it will be instantly transformed to the character.</li>
+	</ul>
+
+
+   </div>
+   <div id="box3">
+    <h4>Enjoying higher usability</h4>
+
+	<ul>
+	 <li>Use the <i>tab key</i> to jump from the current to the next input field.</li>
+	 <li>Press <i>enter key</i> (or <i>return key</i>) to send the form and to see the solutions.</li>
+	 <li>Use numbers 1 to 4 to add vowels and special characters.	</ul>
+
+   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a href="../../../contact/" class="footer">Contact</a> <a href="../../../datenschutz/" class="footer">Data privacy</a>
+
+ </div>
+
+
+
+<script>
+  var gaProperty = 'UA-1188779-83';
+  var disableStr = 'ga-disable-' + gaProperty;
+  if (localStorage.getItem('optout_GA')) {
+   window[disableStr] = true;
+   alert("kein Tracking");
+  }
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+   ga('create', 'UA-1188779-83', 'auto');
+   ga('set', 'anonymizeIp', true);
+   ga('send', 'pageview');
+  </script><link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" /> <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+<script>
+window.addEventListener("load", function(){ window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#FAFAFA",
+      "text": "#242424"
+    },
+    "button": {
+      "background": "#026EA6",
+      "text": "#ffffff"
+    }
+  },
+  "content": {
+    "message": "This website uses cookies. By continuing to browse the site, you are agreeing to our use of cookies.",
+    "dismiss": "Ok",
+    "link": "Data privacy",
+    "href": "/datenschutz/"
+  }
+})});
+</script>
+</div>
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<!-- Slidebars -->
+<script src="../../../js/navigation.js"></script>
+		<script>
+			(function($) {
+				$(document).ready(function() {
+					$.slidebars({
+
+					});
+				});
+			}) (jQuery);
+		</script>
+
+</body>
+</html>
