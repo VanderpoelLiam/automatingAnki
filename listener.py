@@ -3,12 +3,12 @@
 # listener.py - Listens for keyboard and mouse events
 from pynput import mouse
 from pynput import keyboard
-from ankiInteractions import onClick
 
 CTRL_C = {keyboard.Key.ctrl, keyboard.KeyCode.from_char('c')}
 KEYS_SEEN = set()
 COPY_OCCURED = False
 CHOICE = "y"
+HORIZONTAL_MIDPOINT = 960
 
 def onChoice(key):
     global CHOICE
@@ -60,6 +60,12 @@ def listenForCopyAndNext():
     with keyboard.Listener(on_release=onCopyOrNext) as listener:
         listener.join()
 
-def clickAddWhenDropImage():
+def onClick(x, y, button, pressed):
+    if button == mouse.Button.left:
+       if not pressed:
+        if x > HORIZONTAL_MIDPOINT:
+            return False
+
+def listenForClick():
     with mouse.Listener(on_click=onClick) as listener:
         listener.join()

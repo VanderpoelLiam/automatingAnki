@@ -3,13 +3,26 @@
 # exercises.py - Create anki flashcards based on exercises on german.net
 from webscraping import getSoup, getExerciseBox, getParsedExercises
 from ankiInteractions import pasteFront, pasteDefinition, pasteBack, \
-    pasteFullSentence
+    pasteFullSentence, clickAdd
+from browser import getDriver, getImage
+from listener import listenForNext, listenForClick
 
-WEBSITE = "https://german.net/exercises/adjectives/endings/"
+WEBSITE = "https://german.net/exercises/adjectives/superlative/"
 
-"exercisebox"
+def createExercises(driver, exercises, numberExercises):
+    for i in range(numberExercises):
+        sentence = exercises["fullSentence"][i]
+        pasteFullSentence(sentence)
+        pasteBack(exercises["back"][i])
+        pasteDefinition("Superlativ: " + exercises["frontDefn"][i])
+        getImage(driver, sentence)
+        listenForClick()
+        listenForNext()
+        pasteFront(exercises["frontBlanked"][i])
+        clickAdd()
 
 def main():
+    # driver = getDriver()
     # TODO - open website and click check answers button before download html
     # exerciseSoup = getSoup(WEBSITE)
 
@@ -26,16 +39,12 @@ def main():
     baseOffset = 8
     numberExercises = 11
     exercises = getParsedExercises(baseOffset, numberExercises, exerciseSoup, solutionSoup)
+    import pprint as pp
+    pp.pprint(exercises)
 
+    # createExercises(driver, exercises, numberExercises)
 
-    
-    for i in range(numberExercises):
-        pasteFullSentence(exercises["fullSentence"][i])
-        pasteBack(exercises["back"][i])
-        pasteDefinition(exercises["frontDefn"][i])
-
-        pasteFront(exercises["frontBlanked"][i])
-        break
 
 if __name__ == '__main__':
     main()
+    driver.quit()

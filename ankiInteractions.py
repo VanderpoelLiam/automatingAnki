@@ -15,9 +15,7 @@ BACK = (1000, 340)
 FULL_SENTENCE = (1000, 401)
 EXTRA_INFO = (1000, 460)
 GET_2_CARDS = (1000, 522)
-
 ADD = (1695, 1055)
-HORIZONTAL_MIDPOINT = 960
 
 def clickAndPaste(location, text):
     pyautogui.click(location)
@@ -42,10 +40,6 @@ def pasteExtraInfo(text):
 def pasteAdd2Cards():
     clickAndPaste(GET_2_CARDS, "y")
 
-def onClick(x, y, button, pressed):
-    if button == mouse.Button.left:
-       if not pressed:
-        if x > HORIZONTAL_MIDPOINT:
-            pyautogui.moveTo(ADD, duration=1)
-            pyautogui.click()
-            return False
+def clickAdd():
+    pyautogui.moveTo(ADD, duration=1)
+    pyautogui.click()

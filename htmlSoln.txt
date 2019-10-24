@@ -4,8 +4,8 @@
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
  <meta name=viewport content="width=device-width, initial-scale=1">
- <title>German exercises: Adjective endings</title>
-   <META NAME="Language" CONTENT="EN"><link rel="alternate" hreflang="en" href="https://german.net/exercises/adjectives/endings/"><link rel="alternate" hreflang="pt" href="https://alemao.org/exercicios/adjetivos/terminacoes/"><link rel="alternate" hreflang="es" href="https://aleman.org/ejercicios/adjetivos/terminacion/"><link rel="alternate" hreflang="fr" href="https://allemand.org/exercices/adjectifs/terminaison/"><link rel="alternate" hreflang="cs" href="https://nemecky.org/cviceni/pridavna-jmena/koncovky/"> <meta property="og:url" content="http://german.net/exercises/adjectives/endings/">
+ <title>German exercises: Superlative</title>
+   <META NAME="Language" CONTENT="EN"><link rel="alternate" hreflang="en" href="https://german.net/exercises/adjectives/superlative/"><link rel="alternate" hreflang="pt" href="https://alemao.org/exercicios/adjetivos/superlativo/"><link rel="alternate" hreflang="es" href="https://aleman.org/ejercicios/adjetivos/superlativos/"><link rel="alternate" hreflang="fr" href="https://allemand.org/exercices/adjectifs/superlatif/"><link rel="alternate" hreflang="cs" href="https://nemecky.org/cviceni/pridavna-jmena/superlativ/"> <meta property="og:url" content="http://german.net/exercises/adjectives/superlative/">
  <link rel="stylesheet" type="text/css" href="../../../design.css">
  <script type="text/javascript" src="../../../files/main.js"></script> <style>
  .german-responsive { width: 728px; height: 90px; }
@@ -56,7 +56,7 @@
   <div class="button-account-mobile"><a href="../../../login/" class="greybutton"><span class="register">Login</a> <a href="../../../register/" class="greybutton"><span class="register">Sign up</a></div>
 
   <a href="../../../exercises/" class="left_main_button_chosen">Exercises</a>
-  <a href="../../../exercises/tenses/" class="left_button">Tenses & moods</a><a href="../../../exercises/verbs/" class="left_button">Verbs & conjugation</a><a href="../../../exercises/cases/" class="left_button">Cases & declension</a><a href="../../../exercises/nouns/" class="left_button">Nouns & articles</a><a href="../../../exercises/adjectives/" class="left_button_chosen">Adjectives</a>    <div class="left_subbox"><a href="../../../exercises/adjectives/opposites/" class="left_link">Opposites</a><a href="../../../exercises/adjectives/adjective-declension/" class="left_link">Declension</a><a href="../../../exercises/adjectives/endings/" class="left_link_chosen">Endings</a><a href="../../../exercises/adjectives/superlative/" class="left_link">Superlative</a><a href="../../../exercises/adjectives/comparative/" class="left_link">Comparative</a><a href="../../../exercises/adjectives/comparative-superlative/" class="left_link">Comparative & superlative</a>    </div>
+  <a href="../../../exercises/tenses/" class="left_button">Tenses & moods</a><a href="../../../exercises/verbs/" class="left_button">Verbs & conjugation</a><a href="../../../exercises/cases/" class="left_button">Cases & declension</a><a href="../../../exercises/nouns/" class="left_button">Nouns & articles</a><a href="../../../exercises/adjectives/" class="left_button_chosen">Adjectives</a>    <div class="left_subbox"><a href="../../../exercises/adjectives/opposites/" class="left_link">Opposites</a><a href="../../../exercises/adjectives/adjective-declension/" class="left_link">Declension</a><a href="../../../exercises/adjectives/endings/" class="left_link">Endings</a><a href="../../../exercises/adjectives/superlative/" class="left_link_chosen">Superlative</a><a href="../../../exercises/adjectives/comparative/" class="left_link">Comparative</a><a href="../../../exercises/adjectives/comparative-superlative/" class="left_link">Comparative & superlative</a>    </div>
 
    <a href="../../../exercises/numbers/" class="left_button">Numbers</a><a href="../../../exercises/pronouns/" class="left_button">Pronouns</a><a href="../../../exercises/adverbs/" class="left_button">Adverbs</a><a href="../../../exercises/prepositions/" class="left_button">Prepositions</a><a href="../../../exercises/conjunctions/" class="left_button">Conjunctions</a><a href="../../../exercises/sentences/" class="left_button">Sentence construction</a><a href="../../../exercises/passive/" class="left_button">Passive voice</a>
 
@@ -100,9 +100,9 @@
 
 <div id="body">
  <div id="content">
-     <h1>Adjective endings</h1>
+     <h1>Superlative</h1>
 
-     <p>For this exercise, you will be given a paragraph consisting of 10-20 sentences with missing words. In order to complete the exercise, you must fill in each blank with the correct German adjective. All adjectives must have the correct endings to match the gender and case of the rest of the sentence.</p>
+     <p>In this exercise, you will be given a paragraph consisting of 10-20 sentences with missing words. At the end of each sentence is a German adjective. You must fill in the blanks with the superlative form of each German adjective.</p><p>Remember that a superlative describes the highest degree among things that are being compared. For example, in English, if we say that three things are "good, better, and best," "best" is the superlative because it represents the highest degree within the comparison.</p>
 
 	 <div class="adbox"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- German Responsive -->
@@ -120,22 +120,29 @@
 
 
 
-  <form name="form" method="post" accept-charset="utf-8"><div class="exercisebox"><b>Example</b>: Die <span class="resultbox1">schöne</span> Frau spricht mit dem <span class="resultbox1">lieben</span> Mann <span class="hint_text">[schön / lieb]</span><br><div style="margin-top:22px"></div>
-1.) Hattest du eine <span class="resultbox2"> (solution: schöne)</span> Reise mit deinem <span class="resultbox2"> (solution: neuen)</span>  Freund?<br><div style="margin-top:22px"></div>
-2.) Ich wünsche euch einen <span class="resultbox2"> (solution: schönen)</span> Tag und eine <span class="resultbox2"> (solution: gute)</span> Nacht.<br><div style="margin-top:22px"></div>
-3.) Meine Tochter ist ein <span class="resultbox2"> (solution: nettes)</span> Mädchen und hat einen <span class="resultbox2"> (solution: netten)</span> Freund.<br><div style="margin-top:22px"></div>
-4.) Berlin ist eine <span class="resultbox2"> (solution: schöne)</span> Stadt und eine <span class="resultbox2"> (solution: große)</span> Stadt.<br><div style="margin-top:22px"></div>
-5.) Das <span class="resultbox2"> (solution: junge)</span> Mädchen spielt mit seiner <span class="resultbox2"> (solution: neuen)</span> Freundin.<br><div style="margin-top:22px"></div>
-6.) Wie heißt das <span class="resultbox2"> (solution: schöne)</span> Lied? Das ist das <span class="resultbox2"> (solution: neue)</span> Lied von Elton John.<br><div style="margin-top:22px"></div>
-7.) Fährst du mit dem <span class="resultbox2"> (solution: schnellen)</span> Auto deines <span class="resultbox2"> (solution: großen)</span> Bruders?<br><div style="margin-top:22px"></div>
-8.) Die eine Wurst gebe ich dem <span class="resultbox2"> (solution: kleinen)</span> Hund, die andere bekommt der <span class="resultbox2"> (solution: große)</span> Hund.<br><div style="margin-top:22px"></div>
-9.) Deutschland ist ein <span class="resultbox2"> (solution: großes)</span> Land mit <span class="resultbox2"> (solution: vielen)</span> Einwohnern.<br><div style="margin-top:22px"></div>
-10.) Eine Reise ist ein <span class="resultbox2"> (solution: schönes)</span> Geschenk für <span class="resultbox2"> (solution: liebe)</span> Menschen.<br><div style="margin-top:22px"></div>
-11.) Es liegt Schnee auf dem <span class="resultbox2"> (solution: hohen)</span> Berg und regnet auf dem <span class="resultbox2"> (solution: kleinen)</span> Hügel.<br><div style="margin-top:22px"></div>
+  <form name="form" method="post" accept-charset="utf-8"><div class="exercisebox"><b>Example</b>: Paul <span class="resultbox1">der jüngste</span> Schüler unserer Klasse. <span class="hint_text">[jung]</span><br><div style="margin-top:22px"></div>
+1.) Der Mariannengraben <span class="resultbox2"> (solution: ist der tiefste)</span> Punkt der Erde.<br><div style="margin-top:22px"></div>
+2.) Die Hauptstraße <span class="resultbox2"> (solution: ist die breiteste)</span> Straße der Stadt.<br><div style="margin-top:22px"></div>
+3.) Klaus <span class="resultbox2"> (solution: ist der beste)</span> Schwimmer der Schule.<br><div style="margin-top:22px"></div>
+4.) Barcelona <span class="resultbox2"> (solution: ist die schönste)</span> Stadt Spaniens.<br><div style="margin-top:22px"></div>
+5.) Der ICE <span class="resultbox2"> (solution: ist der schnellste)</span> Zug Deutschlands.<br><div style="margin-top:22px"></div>
+6.) Opa <span class="resultbox2"> (solution: ist der älteste)</span> Mann in seinem Haus.<br><div style="margin-top:22px"></div>
+7.) Malta <span class="resultbox2"> (solution: ist das kleinste)</span> Land in der EU.<br><div style="margin-top:22px"></div>
+8.) Mama und Papa <span class="resultbox2"> (solution: sind die besten)</span> Eltern!<br><div style="margin-top:22px"></div>
+9.) Der 21. Juni <span class="resultbox2"> (solution: ist der längste)</span> Tag des Jahres.<br><div style="margin-top:22px"></div>
+10.) Wo <span class="resultbox2"> (solution: ist der kälteste)</span> Ort der Erde?<br><div style="margin-top:22px"></div>
+11.) Heute <span class="resultbox2"> (solution: ist der wärmste)</span> Tag der Woche.<br><div style="margin-top:22px"></div>
+12.) Der Mount Everest <span class="resultbox2"> (solution: ist der höchste)</span> Berg der Erde.<br><div style="margin-top:22px"></div>
+13.) Der Diamant <span class="resultbox2"> (solution: ist der härteste)</span> Stein der Erde.<br><div style="margin-top:22px"></div>
+14.) London <span class="resultbox2"> (solution: ist die größte)</span> Stadt Englands.<br><div style="margin-top:22px"></div>
+15.) Der Februar <span class="resultbox2"> (solution: ist der kürzeste)</span> Monat des Jahres.<br><div style="margin-top:22px"></div>
+16.) Geparde <span class="resultbox2"> (solution: sind die schnellsten)</span> Tiere am Boden.<br><div style="margin-top:22px"></div>
+17.) Die Mona Lisa <span class="resultbox2"> (solution: ist das berühmteste)</span> Gemälde der Welt.<br><div style="margin-top:22px"></div>
+18.) Mein Bruder <span class="resultbox2"> (solution: hat die kürzesten)</span> Haare in der Familie.<br><div style="margin-top:22px"></div>
       <b>My result</b><br><div style="margin-top:9px"></div>
       <div style="width:200px; margin-bottom:1px; padding:2px; height:18px; margin-right:8px; border: 1px solid #B8B8B8; background-color:#ffffff; float:left"><img src="../../../design/bar1.gif" style="height:18px; width:0px"></div>
 
-      You have reached  <b>0</b>  of  <b>22</b> You have reached  <b>0,0%</b>!<br><br>    <a href="#" onClick="document.form.submit()" class="button">Try this exercise again >></a>
+      You have reached  <b>0</b>  of  <b>18</b> You have reached  <b>0,0%</b>!<br><br>    <a href="#" onClick="document.form.submit()" class="button">Try this exercise again >></a>
     <input type="submit" name="Submit" value="Abschicken" style="width: 0px; height: 0px; border: none; padding:0px; margin:0px">   <br style="clear:both"><input type="hidden" name="status" value="input1a"></form></div>
 
 <br>    <a href="../../../exercises/adjectives/" class="button">View all exercises of "Adjectives"</a>

@@ -102,7 +102,8 @@ def main(word, driver):
         listenForNext()
 
     getImage(driver, sentence)
-    clickAddWhenDropImage()
+    listenForClick()
+    clickAdd()
 
 if __name__ == '__main__':
     try:
