@@ -83,55 +83,84 @@ def getWordForms(wiktionarySoup, wordClass):
 ########################################################
 ################ German.net parsing ####################
 ########################################################
+import pprint as pp
 
 def getExerciseBox(soup):
     exerciseBox = soup.find("div", {"class": "exercisebox"})
-    for linebreak in exerciseBox.find_all('br'):
-        linebreak.extract()
+    # for linebreak in exerciseBox.find_all('br'):
+    #     linebreak.extract()
     return(exerciseBox)
 
-def parseExerciseSoln(children, index):
-    part1 = children[index].split(")")[1].strip()
-    blank1 = children[index + 1].text.split(":")[1].split(")")[0].strip()
-    part2 = children[index + 2].strip()
-    blank2 = children[index + 3].text.split(":")[1].split(")")[0].strip()
-    part3 = children[index + 4].strip()
-    adjectives = children[index + 9]
-    blankSentence = part1 + " ___ " + part2 + " ___ " + part3
-    fullSentence = part1 + " " + blank1 + " " + part2 + " " + blank2 + " " + part3
-    conjAdj = blank1 + ", " + blank2
-    return(blankSentence, fullSentence, conjAdj)
+def getAnswers(solutionSoup):
+    answerSoup = solutionSoup.find_all("span", class_="resultbox2")
+    answers = []
+    for answer in answerSoup:
+        rawText = answer.text
+        textAfterColon = rawText.split(":")[1]
+        textBeforeParenthesis = textAfterColon.split(")")[0]
+        finalText = textBeforeParenthesis.strip()
+        answers.append(finalText)
+    return(answers)
 
-def parseExercise(children, index):
-    baseAdj = children[index + 9].text
-    return baseAdj
+def getSentenceComponents(soup):
+    exerciseBox = getExerciseBox(soup)
+    components = []
+    for item in exerciseBox.select(".resultbox2"):
+        rawText1 = item.previous_sibling
+        rawText2 = item.next_sibling
+        text1 = rawText1.split(")")[1].strip()
+        text2 = rawText2.strip()
+        component = [text1, text2]
+        components.append(component)
+    return(components)
 
-def getParsedExercises(baseOffset, numExercises, exerciseSoup, solutionSoup):
-    exerciseChildren = list(getExerciseBox(exerciseSoup).children)
-    solutionChildren = list(getExerciseBox(solutionSoup).children)
+def interleave(list, string):
+    return(list[0] + " " +  string + " "  + list[1])
 
-    blankSentences = []
-    fullSentences = []
-    conjAdjectives = []
-    baseAdjectives = []
+def getFullSentences(sentenceComponents, answers):
+    sentences = []
+    for component, answer in zip(sentenceComponents, answers):
+        sentence = interleave(component, answer)
+        sentences.append(sentence)
+    return(sentences)
 
-    for i in range(numExercises):
-        index = 6*i + baseOffset
-        blankSentence, fullSentence, conjAdj = parseExerciseSoln(solutionChildren, index)
-        blankSentences.append(blankSentence)
-        fullSentences.append(fullSentence)
-        conjAdjectives.append(conjAdj)
+def getSentencesWithBlanks(fullSentences, answers):
+    sentences = []
+    for sentence, answer in zip(fullSentences, answers):
+        blankedSentence = sentence.replace(answer, "___")
+        sentences.append(blankedSentence)
+    return(sentences)
 
-        index = 10*i + baseOffset
-        baseAdj = parseExercise(exerciseChildren, index)
-        baseAdjectives.append(baseAdj)
+def getHints(soup):
+    hintSoup = soup.find_all("span", class_="hint_text")
+    hints = []
+    i = 0
+    for form in hintSoup:
+        text = form.text
+        if text is not "":
+            if i == 0:
+                i = 1
+                continue
+            hints.append(text)
 
+    return(hints)
+
+def getParsedExercises(exerciseSoup, solutionSoup):
+    answers = getAnswers(solutionSoup)
+    sentenceComponents = getSentenceComponents(solutionSoup)
+    fullSentences = getFullSentences(sentenceComponents, answers)
+    blankedSentences = getSentencesWithBlanks(fullSentences, answers)
+    hints = getHints(exerciseSoup)
 
     exercises = {
-        "frontBlanked": blankSentences,
-        "frontDefn": baseAdjectives,
-        "back": conjAdjectives,
+        "frontBlanked": blankedSentences,
+        "frontDefn": hints,
+        "back": answers,
         "fullSentence": fullSentences
                 }
+
+    assert(len(answers) == len(fullSentences))
+    assert(len(answers) == len(blankedSentences))
+    assert(len(answers) == len(hints))
 
     return(exercises)

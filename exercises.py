@@ -36,13 +36,8 @@ def main():
     f.close()
     #############
 
-    baseOffset = 8
-    numberExercises = 11
-    exercises = getParsedExercises(baseOffset, numberExercises, exerciseSoup, solutionSoup)
-    import pprint as pp
-    pp.pprint(exercises)
-
-    # createExercises(driver, exercises, numberExercises)
+    exercises = getParsedExercises(exerciseSoup, solutionSoup)
+    createExercises(driver, exercises, numberExercises)
 
 
 if __name__ == '__main__':
