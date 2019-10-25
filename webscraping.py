@@ -154,8 +154,8 @@ def getParsedExercises(exerciseSoup, solutionSoup):
 
     exercises = {
         "frontBlanked": blankedSentences,
-        "frontDefn": hints,
-        "back": answers,
+        "hint": hints,
+        "answer": answers,
         "fullSentence": fullSentences
                 }
 

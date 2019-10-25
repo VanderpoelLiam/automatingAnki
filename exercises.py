@@ -1,6 +1,7 @@
 #! python3
 
 # exercises.py - Create anki flashcards based on exercises on german.net
+import time
 from webscraping import getSoup, getExerciseBox, getParsedExercises
 from ankiInteractions import pasteFront, pasteDefinition, pasteBack, \
     pasteFullSentence, clickAdd
@@ -9,20 +10,21 @@ from listener import listenForNext, listenForClick
 
 WEBSITE = "https://german.net/exercises/adjectives/superlative/"
 
-def createExercises(driver, exercises, numberExercises):
-    for i in range(numberExercises):
-        sentence = exercises["fullSentence"][i]
-        pasteFullSentence(sentence)
-        pasteBack(exercises["back"][i])
-        pasteDefinition("Superlativ: " + exercises["frontDefn"][i])
-        getImage(driver, sentence)
+def createExercises(driver, exercises):
+    iter = zip(exercises["fullSentence"], exercises["frontBlanked"], \
+        exercises["answer"], exercises["hint"])
+    for fullSentence, blankedSentence, answer, hint in iter:
+        pasteFullSentence(fullSentence)
+        pasteBack(answer)
+        pasteDefinition("Superlativ: " + hint)
+        getImage(driver, fullSentence)
         listenForClick()
         listenForNext()
-        pasteFront(exercises["frontBlanked"][i])
+        pasteFront(blankedSentence)
+        time.sleep(0.5)
         clickAdd()
 
 def main():
-    # driver = getDriver()
     # TODO - open website and click check answers button before download html
     # exerciseSoup = getSoup(WEBSITE)
 
@@ -35,11 +37,10 @@ def main():
     solutionSoup = bs4.BeautifulSoup(f.read(), features="html.parser")
     f.close()
     #############
-
+    driver = getDriver()
     exercises = getParsedExercises(exerciseSoup, solutionSoup)
-    createExercises(driver, exercises, numberExercises)
-
+    createExercises(driver, exercises)
+    driver.quit()
 
 if __name__ == '__main__':
     main()
-    driver.quit()
