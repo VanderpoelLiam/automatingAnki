@@ -3,34 +3,27 @@
 # german.py - Assists creation of german anki card using word from the command
 # line or clipboard
 
-import pyperclip
 import sys
 from re import search
-from webscraping import getSoup, getIpa, getWordClass, getWordForms
+from pyperclip import paste
+from webscraping import getSoup, getIpa, getWordClass, getWordForms, isVerb, isNoun
 from ankiInteractions import pasteFront, pasteDefinition, pasteBack, \
-    pasteFullSentence, pasteExtraInfo, pasteAdd2Cards
-from browser import getDriver, loadWordReference, getImage, getTranslation \
+    pasteFullSentence, pasteExtraInfo, pasteAdd2Cards, clickAdd
+from browser import getDriver, loadWordReference, getImage, getTranslation, \
     getTranslation, getSentence, getDefinition
-from listener import listenForChoice, listenForNext, listenForCopy, \
-    clickAddWhenDropImage
+from listener import listenForChoice, listenForNext, listenForCopy, getChoice, listenForClick
 
 # Website URLs
 WIKITIONARY = 'https://de.wiktionary.org/wiki/'
 LINGUEE = 'https://www.linguee.de/deutsch-englisch/search?source=auto&query='
 FREE_DICT = 'https://de.thefreedictionary.com/'
-GOOGLE_TRANSLATE = 'https://translate.google.ca/#view=home&op=translate&sl=de&tl=en&text='
-
-VERB = 1
-NOUN = 2
-OTHER_WORD_CLASS = 3
-
 
 def queryYesNo(question, default="y"):
     valid = {"y": True, "n": False}
     prompt = " [y/n]\n"
     sys.stdout.write(question + prompt)
     listenForChoice()
-    return valid[CHOICE]
+    return valid[getChoice()]
 
 def clearScreen():
     print("\033[H\033[J")
@@ -41,7 +34,7 @@ def getWord():
         word = sys.argv[1]
     else:
         # Get word from clipboard.
-        word = pyperclip.paste()
+        word = paste()
     return(word)
 
 def blankOutWord(word, sentence):
@@ -68,7 +61,7 @@ def main(word, driver):
     extraInfo = ""
     wordClass = getWordClass(wiktionarySoup)
 
-    if wordClass == VERB or wordClass == NOUN:
+    if isVerb(wordClass) or isNoun(wordClass):
         extraInfo = getWordForms(wiktionarySoup, wordClass)
 
     extraInfo += getIpa(wiktionarySoup)
@@ -80,24 +73,23 @@ def main(word, driver):
     else:
         print("Copy word to blank out.")
         listenForCopy()
-        backContent = pyperclip.paste()
+        backContent = paste()
 
     blankedOutSentence = blankOutWord(backContent, sentence)
 
-    # TODO what does this next line do?
-    # backContent(sentence)
+    pasteFullSentence(sentence)
     pasteBack(backContent)
-    getTranslation(sentence)
+    getTranslation(driver, sentence)
 
-    needDefintion = queryYesNo("Do I need a definition?")
-    if (needDefintion):
-        definition = getDefinition(driver, definitionSites)
-        pasteDefinition(definition)
+    # needDefintion = queryYesNo("Do I need a definition?")
+    # if (needDefintion):
+    definition = getDefinition(driver, definitionSites)
+    pasteDefinition(definition)
     pasteFront(blankedOutSentence)
-    if (needDefintion):
-        getTranslation(definition)
+    # if (needDefintion):
+    getTranslation(driver, definition)
 
-    if wordClass != VERB:
+    if isNoun(wordClass):
         print("Remove any gender indicators from example sentence.\n")
         listenForNext()
 

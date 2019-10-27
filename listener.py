@@ -23,6 +23,9 @@ def listenForChoice():
     with keyboard.Listener(on_release=onChoice) as listener:
         listener.join()
 
+def getChoice():
+    return CHOICE
+
 def onNext(key):
     if key == keyboard.Key.enter:
         return(False)
@@ -40,6 +43,15 @@ def isCopyKey(key):
             return(True)
     return(False)
 
+def getCopyOccured():
+    global COPY_OCCURED
+    return(COPY_OCCURED)
+
+def setCopyOccured(value):
+    global COPY_OCCURED
+    COPY_OCCURED = value
+    return
+
 def onCopy(key):
     if isCopyKey(key):
         return(False)
@@ -49,11 +61,10 @@ def listenForCopy():
         listener.join()
 
 def onCopyOrNext(key):
-    global COPY_OCCURED
     if key == keyboard.Key.enter:
         return(False)
     elif isCopyKey(key):
-        COPY_OCCURED = True
+        setCopyOccured(True)
         return(False)
 
 def listenForCopyAndNext():

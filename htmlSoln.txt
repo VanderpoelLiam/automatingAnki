@@ -4,8 +4,8 @@
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
  <meta name=viewport content="width=device-width, initial-scale=1">
- <title>German exercises: Superlative</title>
-   <META NAME="Language" CONTENT="EN"><link rel="alternate" hreflang="en" href="https://german.net/exercises/adjectives/superlative/"><link rel="alternate" hreflang="pt" href="https://alemao.org/exercicios/adjetivos/superlativo/"><link rel="alternate" hreflang="es" href="https://aleman.org/ejercicios/adjetivos/superlativos/"><link rel="alternate" hreflang="fr" href="https://allemand.org/exercices/adjectifs/superlatif/"><link rel="alternate" hreflang="cs" href="https://nemecky.org/cviceni/pridavna-jmena/superlativ/"> <meta property="og:url" content="http://german.net/exercises/adjectives/superlative/">
+ <title>Practice german cases: Online exercises</title>
+   <META NAME="Language" CONTENT="EN"><link rel="alternate" hreflang="en" href="https://german.net/exercises/cases/all-cases/"><link rel="alternate" hreflang="pt" href="https://alemao.org/exercicios/casos/casos/"><link rel="alternate" hreflang="es" href="https://aleman.org/ejercicios/casos/todos/"><link rel="alternate" hreflang="fr" href="https://allemand.org/exercices/declinaisons/cas/"><link rel="alternate" hreflang="cs" href="https://nemecky.org/cviceni/pady/pady-v-nemcine/"> <meta property="og:url" content="http://german.net/exercises/cases/all-cases/">
  <link rel="stylesheet" type="text/css" href="../../../design.css">
  <script type="text/javascript" src="../../../files/main.js"></script> <style>
  .german-responsive { width: 728px; height: 90px; }
@@ -56,9 +56,9 @@
   <div class="button-account-mobile"><a href="../../../login/" class="greybutton"><span class="register">Login</a> <a href="../../../register/" class="greybutton"><span class="register">Sign up</a></div>
 
   <a href="../../../exercises/" class="left_main_button_chosen">Exercises</a>
-  <a href="../../../exercises/tenses/" class="left_button">Tenses & moods</a><a href="../../../exercises/verbs/" class="left_button">Verbs & conjugation</a><a href="../../../exercises/cases/" class="left_button">Cases & declension</a><a href="../../../exercises/nouns/" class="left_button">Nouns & articles</a><a href="../../../exercises/adjectives/" class="left_button_chosen">Adjectives</a>    <div class="left_subbox"><a href="../../../exercises/adjectives/opposites/" class="left_link">Opposites</a><a href="../../../exercises/adjectives/adjective-declension/" class="left_link">Declension</a><a href="../../../exercises/adjectives/endings/" class="left_link">Endings</a><a href="../../../exercises/adjectives/superlative/" class="left_link_chosen">Superlative</a><a href="../../../exercises/adjectives/comparative/" class="left_link">Comparative</a><a href="../../../exercises/adjectives/comparative-superlative/" class="left_link">Comparative & superlative</a>    </div>
+  <a href="../../../exercises/tenses/" class="left_button">Tenses & moods</a><a href="../../../exercises/verbs/" class="left_button">Verbs & conjugation</a><a href="../../../exercises/cases/" class="left_button_chosen">Cases & declension</a>    <div class="left_subbox"><a href="../../../exercises/cases/accusative-case/" class="left_link">Accusative</a><a href="../../../exercises/cases/dative-case/" class="left_link">Dative</a><a href="../../../exercises/cases/nominative-case/" class="left_link">Nominative</a><a href="../../../exercises/cases/genitive-case/" class="left_link">Genitive</a><a href="../../../exercises/cases/accusative-dative/" class="left_link">Accusative or dative</a><a href="../../../exercises/cases/accusative-nominative/" class="left_link">Accusative or nominative</a><a href="../../../exercises/cases/nominative-accusative-dative/" class="left_link">Nominative, accusative or dative</a><a href="../../../exercises/cases/all-cases/" class="left_link_chosen">All cases</a><a href="../../../exercises/cases/accusative-pronouns/" class="left_link">Accusative pronouns</a><a href="../../../exercises/cases/dative-pronouns/" class="left_link">Dative pronouns</a><a href="../../../exercises/cases/nominative-pronouns/" class="left_link">Nominative pronouns</a><a href="../../../exercises/cases/genitive-pronouns/" class="left_link">Genitive pronouns</a>    </div>
 
-   <a href="../../../exercises/numbers/" class="left_button">Numbers</a><a href="../../../exercises/pronouns/" class="left_button">Pronouns</a><a href="../../../exercises/adverbs/" class="left_button">Adverbs</a><a href="../../../exercises/prepositions/" class="left_button">Prepositions</a><a href="../../../exercises/conjunctions/" class="left_button">Conjunctions</a><a href="../../../exercises/sentences/" class="left_button">Sentence construction</a><a href="../../../exercises/passive/" class="left_button">Passive voice</a>
+   <a href="../../../exercises/nouns/" class="left_button">Nouns & articles</a><a href="../../../exercises/adjectives/" class="left_button">Adjectives</a><a href="../../../exercises/numbers/" class="left_button">Numbers</a><a href="../../../exercises/pronouns/" class="left_button">Pronouns</a><a href="../../../exercises/adverbs/" class="left_button">Adverbs</a><a href="../../../exercises/prepositions/" class="left_button">Prepositions</a><a href="../../../exercises/conjunctions/" class="left_button">Conjunctions</a><a href="../../../exercises/sentences/" class="left_button">Sentence construction</a><a href="../../../exercises/passive/" class="left_button">Passive voice</a>
 
 
 
@@ -100,9 +100,9 @@
 
 <div id="body">
  <div id="content">
-     <h1>Superlative</h1>
+     <h1>German cases</h1>
 
-     <p>In this exercise, you will be given a paragraph consisting of 10-20 sentences with missing words. At the end of each sentence is a German adjective. You must fill in the blanks with the superlative form of each German adjective.</p><p>Remember that a superlative describes the highest degree among things that are being compared. For example, in English, if we say that three things are "good, better, and best," "best" is the superlative because it represents the highest degree within the comparison.</p>
+     <p>In these exercises, you will be required to use all four of the German cases. Continuous practice will help you get good at using and identifying the cases. This is one of the greatest difficulties in learning German, but it is also a crucial element of the language. </p><p>As you work, think carefully about all the ways that cases are marked and reflected, including adjective endings, pronoun choices, article endings, additional noun endings, and word order.</p>
 
 	 <div class="adbox"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- German Responsive -->
@@ -120,32 +120,26 @@
 
 
 
-  <form name="form" method="post" accept-charset="utf-8"><div class="exercisebox"><b>Example</b>: Paul <span class="resultbox1">der jüngste</span> Schüler unserer Klasse. <span class="hint_text">[jung]</span><br><div style="margin-top:22px"></div>
-1.) Der Mariannengraben <span class="resultbox2"> (solution: ist der tiefste)</span> Punkt der Erde.<br><div style="margin-top:22px"></div>
-2.) Die Hauptstraße <span class="resultbox2"> (solution: ist die breiteste)</span> Straße der Stadt.<br><div style="margin-top:22px"></div>
-3.) Klaus <span class="resultbox2"> (solution: ist der beste)</span> Schwimmer der Schule.<br><div style="margin-top:22px"></div>
-4.) Barcelona <span class="resultbox2"> (solution: ist die schönste)</span> Stadt Spaniens.<br><div style="margin-top:22px"></div>
-5.) Der ICE <span class="resultbox2"> (solution: ist der schnellste)</span> Zug Deutschlands.<br><div style="margin-top:22px"></div>
-6.) Opa <span class="resultbox2"> (solution: ist der älteste)</span> Mann in seinem Haus.<br><div style="margin-top:22px"></div>
-7.) Malta <span class="resultbox2"> (solution: ist das kleinste)</span> Land in der EU.<br><div style="margin-top:22px"></div>
-8.) Mama und Papa <span class="resultbox2"> (solution: sind die besten)</span> Eltern!<br><div style="margin-top:22px"></div>
-9.) Der 21. Juni <span class="resultbox2"> (solution: ist der längste)</span> Tag des Jahres.<br><div style="margin-top:22px"></div>
-10.) Wo <span class="resultbox2"> (solution: ist der kälteste)</span> Ort der Erde?<br><div style="margin-top:22px"></div>
-11.) Heute <span class="resultbox2"> (solution: ist der wärmste)</span> Tag der Woche.<br><div style="margin-top:22px"></div>
-12.) Der Mount Everest <span class="resultbox2"> (solution: ist der höchste)</span> Berg der Erde.<br><div style="margin-top:22px"></div>
-13.) Der Diamant <span class="resultbox2"> (solution: ist der härteste)</span> Stein der Erde.<br><div style="margin-top:22px"></div>
-14.) London <span class="resultbox2"> (solution: ist die größte)</span> Stadt Englands.<br><div style="margin-top:22px"></div>
-15.) Der Februar <span class="resultbox2"> (solution: ist der kürzeste)</span> Monat des Jahres.<br><div style="margin-top:22px"></div>
-16.) Geparde <span class="resultbox2"> (solution: sind die schnellsten)</span> Tiere am Boden.<br><div style="margin-top:22px"></div>
-17.) Die Mona Lisa <span class="resultbox2"> (solution: ist das berühmteste)</span> Gemälde der Welt.<br><div style="margin-top:22px"></div>
-18.) Mein Bruder <span class="resultbox2"> (solution: hat die kürzesten)</span> Haare in der Familie.<br><div style="margin-top:22px"></div>
+  <form name="form" method="post" accept-charset="utf-8"><div class="exercisebox"><b>Example</b>: Redest du mit <span class="resultbox1">mir</span>? Ich verstehe <span class="resultbox1">dich</span> nicht.<br><div style="margin-top:19px"></div>
+1.) <span class="resultbox2"> (solution: Meine)</span> Mutter kaufte mir eine <span class="resultbox2"> (solution: neue)</span> Hose.<br><div style="margin-top:19px"></div>
+2.) Meine Freundin schreibt <span class="resultbox2"> (solution: mir)</span> einen <span class="resultbox2"> (solution: langen)</span> Brief.<br><div style="margin-top:19px"></div>
+3.) Meine Eltern fahren ohne <span class="resultbox2"> (solution: mich)</span> in den Urlaub.<br><div style="margin-top:19px"></div>
+4.) Die Freundin <span class="resultbox2"> (solution: meines)</span> Bruders spielt täglich Tennis.<br><div style="margin-top:19px"></div>
+5.) Der Maler malt <span class="resultbox2"> (solution: dir)</span> ein schönes Bild.<br><div style="margin-top:19px"></div>
+6.) Du möchtest mit <span class="resultbox2"> (solution: deinen)</span> Freunden in <span class="resultbox2"> (solution: den)</span> Garten gehen?<br><div style="margin-top:19px"></div>
+7.) Mein Vater machte <span class="resultbox2"> (solution: sich)</span> heute <span class="resultbox2"> (solution: sein)</span> Essen selbst.<br><div style="margin-top:19px"></div>
+8.) Helmut liebt Helga und schenkt <span class="resultbox2"> (solution: ihr)</span> täglich <span class="resultbox2"> (solution: rote)</span> Rosen.<br><div style="margin-top:19px"></div>
+9.) Ich gehe mit <span class="resultbox2"> (solution: meiner)</span> Freundin in <span class="resultbox2"> (solution: die)</span> Schule.<br><div style="margin-top:19px"></div>
+10.) Mein Bruder spielt mit <span class="resultbox2"> (solution: meinem)</span> Hund <span class="resultbox2"> (solution: im)</span> Garten.<br><div style="margin-top:19px"></div>
+11.) Mein Freund besucht <span class="resultbox2"> (solution: seinen)</span> Vater, <span class="resultbox2"> (solution: der)</span> in England wohnt.<br><div style="margin-top:19px"></div>
+12.) Fleisch schmeckt sehr gut mit <span class="resultbox2"> (solution: frischem)</span> Gemüse.<br><div style="margin-top:19px"></div>
       <b>My result</b><br><div style="margin-top:9px"></div>
       <div style="width:200px; margin-bottom:1px; padding:2px; height:18px; margin-right:8px; border: 1px solid #B8B8B8; background-color:#ffffff; float:left"><img src="../../../design/bar1.gif" style="height:18px; width:0px"></div>
 
-      You have reached  <b>0</b>  of  <b>18</b> You have reached  <b>0,0%</b>!<br><br>    <a href="#" onClick="document.form.submit()" class="button">Try this exercise again >></a>
+      You have reached  <b>0</b>  of  <b>20</b> You have reached  <b>0,0%</b>!<br><br>    <a href="#" onClick="document.form.submit()" class="button">Try this exercise again >></a>
     <input type="submit" name="Submit" value="Abschicken" style="width: 0px; height: 0px; border: none; padding:0px; margin:0px">   <br style="clear:both"><input type="hidden" name="status" value="input1a"></form></div>
 
-<br>    <a href="../../../exercises/adjectives/" class="button">View all exercises of "Adjectives"</a>
+<br>    <a href="../../../exercises/cases/" class="button">View all exercises of "Cases & declension"</a>
        <br style="clear:both">
 </div><div id="right">
 
@@ -156,34 +150,7 @@
 
 
 
-   <div id="box3">
-    <h4>Adding special characters</h4>
 
-	Ways to add vowels and the <i>ß</i> without German keyboard design:
-
-	<ul>
-	 <li>Click on the desired character below and it will appear in the active field.</li>
-	</ul>
-
-	<div style="padding-left:20px; padding-bottom:5px">
-	<a href="#" onClick="add_special('ä')" class="character_button">ä</a> <a href="#" class="character_button" onClick="add_special('ö')">ö</a> <a href="#" class="character_button" onClick="add_special('ü')">ü</a> <a href="#" class="character_button" onClick="add_special('ß')">ß</a><br style="clear:both">
-	</div>
-
-    <ul>
-	 <li>A faster and more convenient way: We associated each character with a number from 1 to 4, whereas <b>ä</b> is 1, <b>ö</b> is 2, <b>ü</b> is 3 and <b>ß</b> is 4. Just type in the number and it will be instantly transformed to the character.</li>
-	</ul>
-
-
-   </div>
-   <div id="box3">
-    <h4>Enjoying higher usability</h4>
-
-	<ul>
-	 <li>Use the <i>tab key</i> to jump from the current to the next input field.</li>
-	 <li>Press <i>enter key</i> (or <i>return key</i>) to send the form and to see the solutions.</li>
-	 <li>Use numbers 1 to 4 to add vowels and special characters.	</ul>
-
-   </div>
 
 
 

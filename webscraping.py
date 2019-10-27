@@ -14,6 +14,10 @@ def getSoup(site):
 ############## Wikitionary parsing #####################
 ########################################################
 
+VERB = 1
+NOUN = 2
+OTHER_WORD_CLASS = 3
+
 def getIpa(wiktionarySoup):
     ipa = wiktionarySoup.select('.ipa')[0].text
     return(ipa)
@@ -29,6 +33,13 @@ def getWordClass(wiktionarySoup):
         return(VERB)
     else:
         return(OTHER_WORD_CLASS)
+
+def isVerb(wordClass):
+    return(wordClass == VERB)
+
+def isNoun(wordClass):
+    return(wordClass == NOUN)
+
 
 def getWorttrennung(wiktionarySoup):
     worttrennung = wiktionarySoup.find(string="Worttrennung:").find_next('dd')
@@ -85,6 +96,9 @@ def getWordForms(wiktionarySoup, wordClass):
 ########################################################
 import pprint as pp
 
+DROPDOWN = 0
+BLANK = 1
+
 def getExerciseBox(soup):
     exerciseBox = soup.find("div", {"class": "exercisebox"})
     # for linebreak in exerciseBox.find_all('br'):
@@ -102,16 +116,31 @@ def getAnswers(solutionSoup):
         answers.append(finalText)
     return(answers)
 
-def getSentenceComponents(soup):
+def getItems(soup, answerFormat):
     exerciseBox = getExerciseBox(soup)
+    if answerFormat == BLANK:
+        items = exerciseBox.select(".resultbox2")
+    elif answerFormat == DROPDOWN:
+        # TODO - not working
+        items = exerciseBox.find_all("select", class_="textbox")
+        pp.pprint(items)
+    return items
+
+def parseComponents(item):
+    rawText1 = item.previous_sibling
+    rawText2 = item.next_sibling
+    text1 = rawText1.split(")")[1].strip()
+    text2 = rawText2.strip()
+    component = [text1, text2]
+    return component
+
+def getSentenceComponents(soup, answerFormat):
     components = []
-    for item in exerciseBox.select(".resultbox2"):
-        rawText1 = item.previous_sibling
-        rawText2 = item.next_sibling
-        text1 = rawText1.split(")")[1].strip()
-        text2 = rawText2.strip()
-        component = [text1, text2]
+    items = getItems(soup, answerFormat)
+    for item in items:
+        component = parseComponents(item)
         components.append(component)
+    pp.pprint(components)
     return(components)
 
 def interleave(list, string):
@@ -145,12 +174,13 @@ def getHints(soup):
 
     return(hints)
 
-def getParsedExercises(exerciseSoup, solutionSoup):
+def getParsedExercises(exerciseSoup, solutionSoup, answerFormat):
     answers = getAnswers(solutionSoup)
-    sentenceComponents = getSentenceComponents(solutionSoup)
+    sentenceComponents = getSentenceComponents(solutionSoup, answerFormat)
     fullSentences = getFullSentences(sentenceComponents, answers)
     blankedSentences = getSentencesWithBlanks(fullSentences, answers)
     hints = getHints(exerciseSoup)
+
 
     exercises = {
         "frontBlanked": blankedSentences,
