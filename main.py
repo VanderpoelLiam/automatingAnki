@@ -10,30 +10,21 @@ from webscraping import getSoup, getIpa, getWordClass, getWordForms, isVerb, isN
 from ankiInteractions import pasteFront, pasteDefinition, pasteBack, \
     pasteFullSentence, pasteExtraInfo, pasteAdd2Cards, clickAdd
 from browser import getDriver, loadWordReference, getImage, getTranslation, \
-    getTranslation, getSentence, getDefinition
-from listener import listenForChoice, listenForNext, listenForCopy, getChoice, listenForClick
+    getSentence, getDefinition
+from listener import listenForNext, listenForCopy, listenForClick
 
 # Website URLs
 WIKITIONARY = 'https://de.wiktionary.org/wiki/'
 LINGUEE = 'https://www.linguee.de/deutsch-englisch/search?source=auto&query='
 FREE_DICT = 'https://de.thefreedictionary.com/'
 
-def queryYesNo(question, default="y"):
-    valid = {"y": True, "n": False}
-    prompt = " [y/n]\n"
-    sys.stdout.write(question + prompt)
-    listenForChoice()
-    return valid[getChoice()]
-
 def clearScreen():
     print("\033[H\033[J")
 
 def getWord():
     if len(sys.argv) > 1:
-        # Get word from command line.
         word = sys.argv[1]
     else:
-        # Get word from clipboard.
         word = paste()
     return(word)
 
@@ -51,11 +42,7 @@ def main(word, driver):
     sentenceSites = [wikitionarySite, lingueeSite, theFreeDictSite]
     definitionSites = [wikitionarySite, theFreeDictSite]
 
-    loadWordReference(driver, word)
-
-    make2Cards = queryYesNo("Make 2 cards?")
-    if (make2Cards):
-        pasteAdd2Cards()
+    pasteAdd2Cards()
 
     wiktionarySoup = getSoup(wikitionarySite)
     extraInfo = ""
@@ -66,6 +53,9 @@ def main(word, driver):
 
     extraInfo += getIpa(wiktionarySoup)
     pasteExtraInfo(extraInfo)
+
+    loadWordReference(driver, word)
+    listenForNext()
 
     sentence = getSentence(driver, sentenceSites)
     if wordInSentence(word, sentence):
@@ -81,12 +71,9 @@ def main(word, driver):
     pasteBack(backContent)
     getTranslation(driver, sentence)
 
-    # needDefintion = queryYesNo("Do I need a definition?")
-    # if (needDefintion):
     definition = getDefinition(driver, definitionSites)
     pasteDefinition(definition)
     pasteFront(blankedOutSentence)
-    # if (needDefintion):
     getTranslation(driver, definition)
 
     if isNoun(wordClass):
