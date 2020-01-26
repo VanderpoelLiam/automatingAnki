@@ -4,8 +4,8 @@
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
  <meta name=viewport content="width=device-width, initial-scale=1">
- <title>Practice german cases: Online exercises</title>
-   <META NAME="Language" CONTENT="EN"><link rel="alternate" hreflang="en" href="https://german.net/exercises/cases/all-cases/"><link rel="alternate" hreflang="pt" href="https://alemao.org/exercicios/casos/casos/"><link rel="alternate" hreflang="es" href="https://aleman.org/ejercicios/casos/todos/"><link rel="alternate" hreflang="fr" href="https://allemand.org/exercices/declinaisons/cas/"><link rel="alternate" hreflang="cs" href="https://nemecky.org/cviceni/pady/pady-v-nemcine/"> <meta property="og:url" content="http://german.net/exercises/cases/all-cases/">
+ <title>German exercises: Prepositions of place</title>
+   <META NAME="Language" CONTENT="EN"><link rel="alternate" hreflang="en" href="https://german.net/exercises/prepositions/place-prepositions/"><link rel="alternate" hreflang="pt" href="https://alemao.org/exercicios/preposicoes/preposicoes-lugar/"><link rel="alternate" hreflang="es" href="https://aleman.org/ejercicios/preposiciones/preposiciones-lugar/"><link rel="alternate" hreflang="fr" href="https://allemand.org/exercices/prepositions/prepositions-lieu/"><link rel="alternate" hreflang="cs" href="https://nemecky.org/cviceni/predlozky/predlozky-mistni/"> <meta property="og:url" content="http://german.net/exercises/prepositions/place-prepositions/">
  <link rel="stylesheet" type="text/css" href="../../../design.css">
  <script type="text/javascript" src="../../../files/main.js"></script> <style>
  .german-responsive { width: 728px; height: 90px; }
@@ -56,9 +56,9 @@
   <div class="button-account-mobile"><a href="../../../login/" class="greybutton"><span class="register">Login</a> <a href="../../../register/" class="greybutton"><span class="register">Sign up</a></div>
 
   <a href="../../../exercises/" class="left_main_button_chosen">Exercises</a>
-  <a href="../../../exercises/tenses/" class="left_button">Tenses & moods</a><a href="../../../exercises/verbs/" class="left_button">Verbs & conjugation</a><a href="../../../exercises/cases/" class="left_button_chosen">Cases & declension</a>    <div class="left_subbox"><a href="../../../exercises/cases/accusative-case/" class="left_link">Accusative</a><a href="../../../exercises/cases/dative-case/" class="left_link">Dative</a><a href="../../../exercises/cases/nominative-case/" class="left_link">Nominative</a><a href="../../../exercises/cases/genitive-case/" class="left_link">Genitive</a><a href="../../../exercises/cases/accusative-dative/" class="left_link">Accusative or dative</a><a href="../../../exercises/cases/accusative-nominative/" class="left_link">Accusative or nominative</a><a href="../../../exercises/cases/nominative-accusative-dative/" class="left_link">Nominative, accusative or dative</a><a href="../../../exercises/cases/all-cases/" class="left_link_chosen">All cases</a><a href="../../../exercises/cases/accusative-pronouns/" class="left_link">Accusative pronouns</a><a href="../../../exercises/cases/dative-pronouns/" class="left_link">Dative pronouns</a><a href="../../../exercises/cases/nominative-pronouns/" class="left_link">Nominative pronouns</a><a href="../../../exercises/cases/genitive-pronouns/" class="left_link">Genitive pronouns</a>    </div>
+  <a href="../../../exercises/tenses/" class="left_button">Tenses & moods</a><a href="../../../exercises/verbs/" class="left_button">Verbs & conjugation</a><a href="../../../exercises/cases/" class="left_button">Cases & declension</a><a href="../../../exercises/nouns/" class="left_button">Nouns & articles</a><a href="../../../exercises/adjectives/" class="left_button">Adjectives</a><a href="../../../exercises/numbers/" class="left_button">Numbers</a><a href="../../../exercises/pronouns/" class="left_button">Pronouns</a><a href="../../../exercises/adverbs/" class="left_button">Adverbs</a><a href="../../../exercises/prepositions/" class="left_button_chosen">Prepositions</a>    <div class="left_subbox"><a href="../../../exercises/prepositions/dative/" class="left_link">Dative prepositions</a><a href="../../../exercises/prepositions/accusative/" class="left_link">Accusative prepositions</a><a href="../../../exercises/prepositions/genitive/" class="left_link">Genitive prepositions</a><a href="../../../exercises/prepositions/dative-accusative/" class="left_link">Dative & accusative prepositions</a><a href="../../../exercises/prepositions/place-prepositions/" class="left_link_chosen">Prepositions of place</a><a href="../../../exercises/prepositions/time-prepositions/" class="left_link">Prepositions of time</a><a href="../../../exercises/prepositions/aus-von/" class="left_link">Aus or von</a><a href="../../../exercises/prepositions/zu-nach/" class="left_link">Nach or zu</a>    </div>
 
-   <a href="../../../exercises/nouns/" class="left_button">Nouns & articles</a><a href="../../../exercises/adjectives/" class="left_button">Adjectives</a><a href="../../../exercises/numbers/" class="left_button">Numbers</a><a href="../../../exercises/pronouns/" class="left_button">Pronouns</a><a href="../../../exercises/adverbs/" class="left_button">Adverbs</a><a href="../../../exercises/prepositions/" class="left_button">Prepositions</a><a href="../../../exercises/conjunctions/" class="left_button">Conjunctions</a><a href="../../../exercises/sentences/" class="left_button">Sentence construction</a><a href="../../../exercises/passive/" class="left_button">Passive voice</a>
+   <a href="../../../exercises/conjunctions/" class="left_button">Conjunctions</a><a href="../../../exercises/sentences/" class="left_button">Sentence construction</a><a href="../../../exercises/passive/" class="left_button">Passive voice</a>
 
 
 
@@ -100,9 +100,9 @@
 
 <div id="body">
  <div id="content">
-     <h1>German cases</h1>
+     <h1>Prepositions of place</h1>
 
-     <p>In these exercises, you will be required to use all four of the German cases. Continuous practice will help you get good at using and identifying the cases. This is one of the greatest difficulties in learning German, but it is also a crucial element of the language. </p><p>As you work, think carefully about all the ways that cases are marked and reflected, including adjective endings, pronoun choices, article endings, additional noun endings, and word order.</p>
+     <p>The sentences in this multiple-choice exercise are missing prepositions that denote location/place/position. Choose the most appropriate answer for each sentence. </p><p>Remember that some prepositions are always used in the dative case. For e.g, aus, von, nach, zu, etc. </p><p><b>Aus</b> means "out of" and von means "from." You would use "aus" when you want to denote nationality or where you belong. For e.g. <i>Ich komme <strong>aus</strong> Chine</i> means that <i>I hail/come from China.</i> </p><p><b>Von</b> is used when you want to say that you are directly coming from some place. For e.g., <i>Ich komme <strong>von</strong> der Arbeit</i> literally means that you are coming from the work. </p><p>"Nach" and "zu", both mean "to." However, <strong>nach</strong> is used with reference to geographic locations or directions; <strong>zu</strong> is used in all other cases except these. Also, <strong>zu</strong> is always used with an article or combined and contracted with the article that follows it. For e.g. <i><strong>zu dem</strong> Bahnhof</i> becomes <i><strong>zum</strong> Bahnhof.</i></p>
 
 	 <div class="adbox"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- German Responsive -->
@@ -120,26 +120,25 @@
 
 
 
-  <form name="form" method="post" accept-charset="utf-8"><div class="exercisebox"><b>Example</b>: Redest du mit <span class="resultbox1">mir</span>? Ich verstehe <span class="resultbox1">dich</span> nicht.<br><div style="margin-top:19px"></div>
-1.) <span class="resultbox2"> (solution: Meine)</span> Mutter kaufte mir eine <span class="resultbox2"> (solution: neue)</span> Hose.<br><div style="margin-top:19px"></div>
-2.) Meine Freundin schreibt <span class="resultbox2"> (solution: mir)</span> einen <span class="resultbox2"> (solution: langen)</span> Brief.<br><div style="margin-top:19px"></div>
-3.) Meine Eltern fahren ohne <span class="resultbox2"> (solution: mich)</span> in den Urlaub.<br><div style="margin-top:19px"></div>
-4.) Die Freundin <span class="resultbox2"> (solution: meines)</span> Bruders spielt täglich Tennis.<br><div style="margin-top:19px"></div>
-5.) Der Maler malt <span class="resultbox2"> (solution: dir)</span> ein schönes Bild.<br><div style="margin-top:19px"></div>
-6.) Du möchtest mit <span class="resultbox2"> (solution: deinen)</span> Freunden in <span class="resultbox2"> (solution: den)</span> Garten gehen?<br><div style="margin-top:19px"></div>
-7.) Mein Vater machte <span class="resultbox2"> (solution: sich)</span> heute <span class="resultbox2"> (solution: sein)</span> Essen selbst.<br><div style="margin-top:19px"></div>
-8.) Helmut liebt Helga und schenkt <span class="resultbox2"> (solution: ihr)</span> täglich <span class="resultbox2"> (solution: rote)</span> Rosen.<br><div style="margin-top:19px"></div>
-9.) Ich gehe mit <span class="resultbox2"> (solution: meiner)</span> Freundin in <span class="resultbox2"> (solution: die)</span> Schule.<br><div style="margin-top:19px"></div>
-10.) Mein Bruder spielt mit <span class="resultbox2"> (solution: meinem)</span> Hund <span class="resultbox2"> (solution: im)</span> Garten.<br><div style="margin-top:19px"></div>
-11.) Mein Freund besucht <span class="resultbox2"> (solution: seinen)</span> Vater, <span class="resultbox2"> (solution: der)</span> in England wohnt.<br><div style="margin-top:19px"></div>
-12.) Fleisch schmeckt sehr gut mit <span class="resultbox2"> (solution: frischem)</span> Gemüse.<br><div style="margin-top:19px"></div>
+  <form name="form" method="post" accept-charset="utf-8"><div class="exercisebox"><b>Example</b>: Ich gehe <span class="resultbox1">durch</span> die Tür und stehe <span class="resultbox1">vor</span> dir.<br><div style="margin-top:19px"></div>
+1.) Wir fliegen <span class="resultbox2"> (solution: nach)</span> London.<br><div style="margin-top:19px"></div>
+2.) Ich sitze <span class="resultbox2"> (solution: auf)</span> dem Stuhl.<br><div style="margin-top:19px"></div>
+3.) Am Wochenende fahren wir <span class="resultbox2"> (solution: zu)</span> unserer Oma.<br><div style="margin-top:19px"></div>
+4.) Woher kommst du? Ich komme <span class="resultbox2"> (solution: aus)</span> der Schule.<br><div style="margin-top:19px"></div>
+5.) Wir fahren seit einer Stunde dem Fluss <span class="resultbox2"> (solution: entlang)</span>.<br><div style="margin-top:19px"></div>
+7.) Am Montag muss ich wieder <span class="resultbox2"> (solution: in)</span> die Schule gehen.<br><div style="margin-top:19px"></div>
+8.) Danach fahren wir <span class="resultbox2"> (solution: ans)</span> Meer.<br><div style="margin-top:19px"></div>
+10.) Ich schlage <span class="resultbox2"> (solution: gegen)</span> die Wand.<br><div style="margin-top:19px"></div>
+11.) Mein Vater ist gerade <span class="resultbox2"> (solution: vom)</span> Doktor gekommen.<br><div style="margin-top:19px"></div>
+12.) Ich bin morgen <span class="resultbox2"> (solution: beim)</span> Arzt.<br><div style="margin-top:19px"></div>
+13.) Der Zug fährt <span class="resultbox2"> (solution: bis)</span> nach Hamburg.<br><div style="margin-top:19px"></div>
       <b>My result</b><br><div style="margin-top:9px"></div>
       <div style="width:200px; margin-bottom:1px; padding:2px; height:18px; margin-right:8px; border: 1px solid #B8B8B8; background-color:#ffffff; float:left"><img src="../../../design/bar1.gif" style="height:18px; width:0px"></div>
 
-      You have reached  <b>0</b>  of  <b>20</b> You have reached  <b>0,0%</b>!<br><br>    <a href="#" onClick="document.form.submit()" class="button">Try this exercise again >></a>
+      You have reached  <b>0</b>  of  <b>17</b> You have reached  <b>0,0%</b>!<br><br>    <a href="#" onClick="document.form.submit()" class="button">Try this exercise again >></a>
     <input type="submit" name="Submit" value="Abschicken" style="width: 0px; height: 0px; border: none; padding:0px; margin:0px">   <br style="clear:both"><input type="hidden" name="status" value="input1a"></form></div>
 
-<br>    <a href="../../../exercises/cases/" class="button">View all exercises of "Cases & declension"</a>
+<br>    <a href="../../../exercises/prepositions/" class="button">View all exercises of "Prepositions"</a>
        <br style="clear:both">
 </div><div id="right">
 

@@ -4,6 +4,7 @@
 
 import requests
 import bs4
+import re
 
 def getSoup(site):
     response = requests.get(site)
@@ -101,8 +102,6 @@ BLANK = 1
 
 def getExerciseBox(soup):
     exerciseBox = soup.find("div", {"class": "exercisebox"})
-    # for linebreak in exerciseBox.find_all('br'):
-    #     linebreak.extract()
     return(exerciseBox)
 
 def getAnswers(solutionSoup):
@@ -121,9 +120,7 @@ def getItems(soup, answerFormat):
     if answerFormat == BLANK:
         items = exerciseBox.select(".resultbox2")
     elif answerFormat == DROPDOWN:
-        # TODO - not working
         items = exerciseBox.find_all("select", class_="textbox")
-        pp.pprint(items)
     return items
 
 def parseComponents(item):
@@ -140,7 +137,6 @@ def getSentenceComponents(soup, answerFormat):
     for item in items:
         component = parseComponents(item)
         components.append(component)
-    pp.pprint(components)
     return(components)
 
 def interleave(list, string):
@@ -160,27 +156,38 @@ def getSentencesWithBlanks(fullSentences, answers):
         sentences.append(blankedSentence)
     return(sentences)
 
-def getHints(soup):
-    hintSoup = soup.find_all("span", class_="hint_text")
-    hints = []
-    i = 0
-    for form in hintSoup:
-        text = form.text
-        if text is not "":
-            if i == 0:
-                i = 1
-                continue
-            hints.append(text)
+def getDropdownOptions(menu):
+    optionsSoup = menu.find_all("option")[1:]
+    options = ""
+    for option in optionsSoup:
+        options += option.text + ", "
+    return(options)
 
+def getHints(soup, answerFormat):
+    hints = []
+    if answerFormat == BLANK:
+        hintSoup = soup.find_all("span", class_="hint_text")
+        i = 0
+        for form in hintSoup:
+            text = form.text
+            if text is not "":
+                if i == 0:
+                    i = 1
+                    continue
+                hints.append(text)
+    elif answerFormat == DROPDOWN:
+        dropdownMenus = soup.find_all("select", class_="textbox")
+        for menu in dropdownMenus:
+            options = getDropdownOptions(menu)
+            hints.append(options)
     return(hints)
 
 def getParsedExercises(exerciseSoup, solutionSoup, answerFormat):
     answers = getAnswers(solutionSoup)
-    sentenceComponents = getSentenceComponents(solutionSoup, answerFormat)
+    hints = getHints(exerciseSoup, answerFormat)
+    sentenceComponents = getSentenceComponents(exerciseSoup, answerFormat)
     fullSentences = getFullSentences(sentenceComponents, answers)
     blankedSentences = getSentencesWithBlanks(fullSentences, answers)
-    hints = getHints(exerciseSoup)
-
 
     exercises = {
         "frontBlanked": blankedSentences,
