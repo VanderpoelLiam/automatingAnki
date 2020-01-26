@@ -18,9 +18,6 @@ WIKITIONARY = 'https://de.wiktionary.org/wiki/'
 LINGUEE = 'https://www.linguee.de/deutsch-englisch/search?source=auto&query='
 FREE_DICT = 'https://de.thefreedictionary.com/'
 
-def clearScreen():
-    print("\033[H\033[J")
-
 def getWord():
     if len(sys.argv) > 1:
         word = sys.argv[1]
@@ -89,6 +86,9 @@ if __name__ == '__main__':
         driver = getDriver()
         word = getWord()
         main(word, driver)
-        clearScreen()
+        while True:
+            listenForNext()
+            word = paste()
+            main(word, driver)
     finally:
         driver.quit()
