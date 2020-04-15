@@ -6,7 +6,7 @@
 import sys
 from re import search
 from pyperclip import paste
-from webscraping import getSoup, getIpa, getWordClass, getWordForms, isVerb, isNoun
+from webscraping import WikitionaryParser
 from ankiInteractions import pasteFront, pasteDefinition, pasteBack, \
     pasteFullSentence, pasteExtraInfo, pasteAdd2Cards, clickAdd
 from browser import getDriver, loadWordReference, getImage, getTranslation, \
@@ -41,14 +41,8 @@ def main(word, driver):
 
     pasteAdd2Cards()
 
-    wiktionarySoup = getSoup(wikitionarySite)
-    extraInfo = ""
-    wordClass = getWordClass(wiktionarySoup)
-
-    if isVerb(wordClass) or isNoun(wordClass):
-        extraInfo = getWordForms(wiktionarySoup, wordClass)
-
-    extraInfo += getIpa(wiktionarySoup)
+    wikiParser = WikitionaryParser(word)
+    extraInfo = wikiParser.getWordForms() + wikiParser.getIpa()
     pasteExtraInfo(extraInfo)
 
     loadWordReference(driver, word)
@@ -81,12 +75,18 @@ def main(word, driver):
     listenForClick()
     clickAdd()
 
+
 if __name__ == '__main__':
+    if len(sys.argv) - 1 > 0:
+        repeat = True
+    else:
+        repeat = False
+
     try:
         driver = getDriver()
         word = getWord()
         main(word, driver)
-        while True:
+        while repeat:
             listenForNext()
             word = paste()
             main(word, driver)

@@ -2,7 +2,7 @@
 
 # exercises.py - Create anki flashcards based on exercises on german.net
 import time
-from webscraping import getSoup, getExerciseBox, getParsedExercises, \
+from webscraping import getExerciseBox, getParsedExercises, \
     DROPDOWN, BLANK
 from ankiInteractions import pasteFront, pasteDefinition, pasteBack, \
     pasteFullSentence, clickAdd
@@ -29,18 +29,12 @@ def createExercises(driver, exercises):
             clickAdd()
 
 def main():
-    # TODO - open website and click check answers button before download html
-    # exerciseSoup = getSoup(WEBSITE)
-
-    #############
-    import bs4
     f = open("html.txt","r")
     exerciseSoup = bs4.BeautifulSoup(f.read(), features="html.parser")
     f.close()
     f = open("htmlSoln.txt","r")
     solutionSoup = bs4.BeautifulSoup(f.read(), features="html.parser")
     f.close()
-    #############
     driver = getDriver()
     try:
         exercises = getParsedExercises(exerciseSoup, solutionSoup, DROPDOWN)

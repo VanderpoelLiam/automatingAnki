@@ -4,8 +4,8 @@
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
  <meta name=viewport content="width=device-width, initial-scale=1">
- <title>German exercises: Prepositions of place</title>
-   <META NAME="Language" CONTENT="EN"><link rel="alternate" hreflang="en" href="https://german.net/exercises/prepositions/place-prepositions/"><link rel="alternate" hreflang="pt" href="https://alemao.org/exercicios/preposicoes/preposicoes-lugar/"><link rel="alternate" hreflang="es" href="https://aleman.org/ejercicios/preposiciones/preposiciones-lugar/"><link rel="alternate" hreflang="fr" href="https://allemand.org/exercices/prepositions/prepositions-lieu/"><link rel="alternate" hreflang="cs" href="https://nemecky.org/cviceni/predlozky/predlozky-mistni/"> <meta property="og:url" content="http://german.net/exercises/prepositions/place-prepositions/">
+ <title>German exercises: Passive voice in present tense</title>
+   <META NAME="Language" CONTENT="EN"><link rel="alternate" hreflang="en" href="https://german.net/exercises/passive/present-passive/"><link rel="alternate" hreflang="pt" href="https://alemao.org/exercicios/forma-passiva/passiva-presente/"><link rel="alternate" hreflang="es" href="https://aleman.org/ejercicios/pasiva/voz-pasiva-presente/"><link rel="alternate" hreflang="fr" href="https://allemand.org/exercices/passif/passif-present/"><link rel="alternate" hreflang="cs" href="https://nemcina.net/cviceni/trpny-rod/trpny-rod-pritomny-cas/"> <meta property="og:url" content="http://german.net/exercises/passive/present-passive/">
  <link rel="stylesheet" type="text/css" href="../../../design.css">
  <script type="text/javascript" src="../../../files/main.js"></script> <style>
  .german-responsive { width: 728px; height: 90px; }
@@ -56,9 +56,9 @@
   <div class="button-account-mobile"><a href="../../../login/" class="greybutton"><span class="register">Login</a> <a href="../../../register/" class="greybutton"><span class="register">Sign up</a></div>
 
   <a href="../../../exercises/" class="left_main_button_chosen">Exercises</a>
-  <a href="../../../exercises/tenses/" class="left_button">Tenses & moods</a><a href="../../../exercises/verbs/" class="left_button">Verbs & conjugation</a><a href="../../../exercises/cases/" class="left_button">Cases & declension</a><a href="../../../exercises/nouns/" class="left_button">Nouns & articles</a><a href="../../../exercises/adjectives/" class="left_button">Adjectives</a><a href="../../../exercises/numbers/" class="left_button">Numbers</a><a href="../../../exercises/pronouns/" class="left_button">Pronouns</a><a href="../../../exercises/adverbs/" class="left_button">Adverbs</a><a href="../../../exercises/prepositions/" class="left_button_chosen">Prepositions</a>    <div class="left_subbox"><a href="../../../exercises/prepositions/dative/" class="left_link">Dative prepositions</a><a href="../../../exercises/prepositions/accusative/" class="left_link">Accusative prepositions</a><a href="../../../exercises/prepositions/genitive/" class="left_link">Genitive prepositions</a><a href="../../../exercises/prepositions/dative-accusative/" class="left_link">Dative & accusative prepositions</a><a href="../../../exercises/prepositions/place-prepositions/" class="left_link_chosen">Prepositions of place</a><a href="../../../exercises/prepositions/time-prepositions/" class="left_link">Prepositions of time</a><a href="../../../exercises/prepositions/aus-von/" class="left_link">Aus or von</a><a href="../../../exercises/prepositions/zu-nach/" class="left_link">Nach or zu</a>    </div>
+  <a href="../../../exercises/tenses/" class="left_button">Tenses & moods</a><a href="../../../exercises/verbs/" class="left_button">Verbs & conjugation</a><a href="../../../exercises/cases/" class="left_button">Cases & declension</a><a href="../../../exercises/nouns/" class="left_button">Nouns & articles</a><a href="../../../exercises/adjectives/" class="left_button">Adjectives</a><a href="../../../exercises/numbers/" class="left_button">Numbers</a><a href="../../../exercises/pronouns/" class="left_button">Pronouns</a><a href="../../../exercises/adverbs/" class="left_button">Adverbs</a><a href="../../../exercises/prepositions/" class="left_button">Prepositions</a><a href="../../../exercises/conjunctions/" class="left_button">Conjunctions</a><a href="../../../exercises/sentences/" class="left_button">Sentence construction</a><a href="../../../exercises/passive/" class="left_button_chosen">Passive voice</a>    <div class="left_subbox"><a href="../../../exercises/passive/present-passive/" class="left_link_chosen">Passive in present tense</a><a href="../../../exercises/passive/simple-past-passive/" class="left_link">Passive in simple past</a><a href="../../../exercises/passive/future-passive/" class="left_link">Passive in future tense</a><a href="../../../exercises/passive/passive-of-state/" class="left_link">Passive of state</a><a href="../../../exercises/passive/perfect-passive/" class="left_link">Passive in perfect tense</a><a href="../../../exercises/passive/past-perfect-passive/" class="left_link">Passive in past perfect</a><a href="../../../exercises/passive/future-perfect-passive/" class="left_link">Passive in future perfect</a>    </div>
 
-   <a href="../../../exercises/conjunctions/" class="left_button">Conjunctions</a><a href="../../../exercises/sentences/" class="left_button">Sentence construction</a><a href="../../../exercises/passive/" class="left_button">Passive voice</a>
+
 
 
 
@@ -100,9 +100,9 @@
 
 <div id="body">
  <div id="content">
-     <h1>Prepositions of place</h1>
+     <h1>Passive voice in present tense</h1>
 
-     <p>The sentences in this multiple-choice exercise are missing prepositions that denote location/place/position. Choose the most appropriate answer for each sentence. </p><p>Remember that some prepositions are always used in the dative case. For e.g, aus, von, nach, zu, etc. </p><p><b>Aus</b> means "out of" and von means "from." You would use "aus" when you want to denote nationality or where you belong. For e.g. <i>Ich komme <strong>aus</strong> Chine</i> means that <i>I hail/come from China.</i> </p><p><b>Von</b> is used when you want to say that you are directly coming from some place. For e.g., <i>Ich komme <strong>von</strong> der Arbeit</i> literally means that you are coming from the work. </p><p>"Nach" and "zu", both mean "to." However, <strong>nach</strong> is used with reference to geographic locations or directions; <strong>zu</strong> is used in all other cases except these. Also, <strong>zu</strong> is always used with an article or combined and contracted with the article that follows it. For e.g. <i><strong>zu dem</strong> Bahnhof</i> becomes <i><strong>zum</strong> Bahnhof.</i></p>
+     <p>Use the passive voice to emphasize the patient (the thing being acted upon) rather than the agent (the thing acting) in a sentence, by making it the sentence's subject. When the action is taking place right now, use the present tense passive voice. A sentence in present passive is constructed like this in German:</p><p><i>[patient]</i> wird <i>[preposition] [agent] [past participle of verb]</i>.</p><p>The active sentence "<i>Ich schreibe es</i>" ("<i>I am writing it</i>"), for example, becomes "<i>Es wird von mir geschrieben</i>" ("<i>It is being written by me</i>") in the present passive.</p><p>In this exercise, please transform the active sentences into passive ones. Click the "Send" button when finished. Our system will automatically correct errors and show the answers.</p>
 
 	 <div class="adbox"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- German Responsive -->
@@ -120,25 +120,29 @@
 
 
 
-  <form name="form" method="post" accept-charset="utf-8"><div class="exercisebox"><b>Example</b>: Ich gehe <span class="resultbox1">durch</span> die Tür und stehe <span class="resultbox1">vor</span> dir.<br><div style="margin-top:19px"></div>
-1.) Wir fliegen <span class="resultbox2"> (solution: nach)</span> London.<br><div style="margin-top:19px"></div>
-2.) Ich sitze <span class="resultbox2"> (solution: auf)</span> dem Stuhl.<br><div style="margin-top:19px"></div>
-3.) Am Wochenende fahren wir <span class="resultbox2"> (solution: zu)</span> unserer Oma.<br><div style="margin-top:19px"></div>
-4.) Woher kommst du? Ich komme <span class="resultbox2"> (solution: aus)</span> der Schule.<br><div style="margin-top:19px"></div>
-5.) Wir fahren seit einer Stunde dem Fluss <span class="resultbox2"> (solution: entlang)</span>.<br><div style="margin-top:19px"></div>
-7.) Am Montag muss ich wieder <span class="resultbox2"> (solution: in)</span> die Schule gehen.<br><div style="margin-top:19px"></div>
-8.) Danach fahren wir <span class="resultbox2"> (solution: ans)</span> Meer.<br><div style="margin-top:19px"></div>
-10.) Ich schlage <span class="resultbox2"> (solution: gegen)</span> die Wand.<br><div style="margin-top:19px"></div>
-11.) Mein Vater ist gerade <span class="resultbox2"> (solution: vom)</span> Doktor gekommen.<br><div style="margin-top:19px"></div>
-12.) Ich bin morgen <span class="resultbox2"> (solution: beim)</span> Arzt.<br><div style="margin-top:19px"></div>
-13.) Der Zug fährt <span class="resultbox2"> (solution: bis)</span> nach Hamburg.<br><div style="margin-top:19px"></div>
+  <form name="form" method="post" accept-charset="utf-8"><div class="exercisebox"><b>Example</b>: Ich frage meinen Bruder. Mein Bruder <span class="resultbox1">wird</span> von mir <span class="resultbox1">gefragt</span>.<br><div style="margin-top:22px"></div>
+1.) Ich repariere das Auto. Das Auto <span class="resultbox2"> (solution: wird)</span> von mir <span class="resultbox2"> (solution: repariert)</span>.<br><div style="margin-top:22px"></div>
+2.) Ich liebe meinen Hund. Mein Hund <span class="resultbox2"> (solution: wird)</span> von mir <span class="resultbox2"> (solution: geliebt)</span>.<br><div style="margin-top:22px"></div>
+3.) Du liest ein Buch. Das Buch <span class="resultbox2"> (solution: wird)</span> von dir <span class="resultbox2"> (solution: gelesen)</span>.<br><div style="margin-top:22px"></div>
+4.) Das Huhn legt ein Ei. Ein Ei <span class="resultbox2"> (solution: wird)</span> vom Huhn <span class="resultbox2"> (solution: gelegt)</span>.<br><div style="margin-top:22px"></div>
+5.) Wir fahren das Auto in die Garage. Das Auto wird von <span class="resultbox2"> (solution: uns)</span> in die Garage <span class="resultbox2"> (solution: gefahren)</span>.<br><div style="margin-top:22px"></div>
+6.) Ihr öffnet die Tür. Die Tür wird <span class="resultbox2"> (solution: von)</span> euch <span class="resultbox2"> (solution: geöffnet)</span>.<br><div style="margin-top:22px"></div>
+7.) Ich sehe dich. Du <span class="resultbox2"> (solution: wirst)</span> von mir <span class="resultbox2"> (solution: gesehen)</span>.<br><div style="margin-top:22px"></div>
+8.) Ein Mann fragt mich nach dem Weg. Ich <span class="resultbox2"> (solution: werde)</span> von einem Mann nach dem Weg <span class="resultbox2"> (solution: gefragt)</span>.<br><div style="margin-top:22px"></div>
+9.) Ich koche die Suppe. Die Suppe <span class="resultbox2"> (solution: wird von mir gekocht)</span>.<br><div style="margin-top:22px"></div>
+10.) Du spielst das Klavier. Das Klavier <span class="resultbox2"> (solution: wird von dir gespielt)</span>.<br><div style="margin-top:22px"></div>
+11.) Ich verkaufe mein Fahrrad. Mein Fahrrad <span class="resultbox2"> (solution: wird von mir verkauft)</span>.<br><div style="margin-top:22px"></div>
+12.) Ich nehme den Schlüssel. Der Schlüssel <span class="resultbox2"> (solution: wird von mir genommen)</span>.<br><div style="margin-top:22px"></div>
+13.) Der Frisör schneidet meine Haare. Meine Haare <span class="resultbox2"> (solution: werden)</span> vom Frisör <span class="resultbox2"> (solution: geschnitten)</span>.<br><div style="margin-top:22px"></div>
+14.) Meine Freundin isst ein Ei. Ein Ei <span class="resultbox2"> (solution: wird von meiner Freundin gegessen)</span>.<br><div style="margin-top:22px"></div>
+15.) Ich gieße die Blumen. Die Blumen <span class="resultbox2"> (solution: werden von mir gegossen)</span>.<br><div style="margin-top:22px"></div>
       <b>My result</b><br><div style="margin-top:9px"></div>
       <div style="width:200px; margin-bottom:1px; padding:2px; height:18px; margin-right:8px; border: 1px solid #B8B8B8; background-color:#ffffff; float:left"><img src="../../../design/bar1.gif" style="height:18px; width:0px"></div>
 
-      You have reached  <b>0</b>  of  <b>17</b> You have reached  <b>0,0%</b>!<br><br>    <a href="#" onClick="document.form.submit()" class="button">Try this exercise again >></a>
+      You have reached  <b>0</b>  of  <b>24</b> You have reached  <b>0,0%</b>!<br><br>    <a href="#" onClick="document.form.submit()" class="button">Try this exercise again >></a>
     <input type="submit" name="Submit" value="Abschicken" style="width: 0px; height: 0px; border: none; padding:0px; margin:0px">   <br style="clear:both"><input type="hidden" name="status" value="input1a"></form></div>
 
-<br>    <a href="../../../exercises/prepositions/" class="button">View all exercises of "Prepositions"</a>
+<br>    <a href="../../../exercises/passive/" class="button">View all exercises of "Passive voice"</a>
        <br style="clear:both">
 </div><div id="right">
 
@@ -149,7 +153,34 @@
 
 
 
+   <div id="box3">
+    <h4>Adding special characters</h4>
 
+	Ways to add vowels and the <i>ß</i> without German keyboard design:
+
+	<ul>
+	 <li>Click on the desired character below and it will appear in the active field.</li>
+	</ul>
+
+	<div style="padding-left:20px; padding-bottom:5px">
+	<a href="#" onClick="add_special('ä')" class="character_button">ä</a> <a href="#" class="character_button" onClick="add_special('ö')">ö</a> <a href="#" class="character_button" onClick="add_special('ü')">ü</a> <a href="#" class="character_button" onClick="add_special('ß')">ß</a><br style="clear:both">
+	</div>
+
+    <ul>
+	 <li>A faster and more convenient way: We associated each character with a number from 1 to 4, whereas <b>ä</b> is 1, <b>ö</b> is 2, <b>ü</b> is 3 and <b>ß</b> is 4. Just type in the number and it will be instantly transformed to the character.</li>
+	</ul>
+
+
+   </div>
+   <div id="box3">
+    <h4>Enjoying higher usability</h4>
+
+	<ul>
+	 <li>Use the <i>tab key</i> to jump from the current to the next input field.</li>
+	 <li>Press <i>enter key</i> (or <i>return key</i>) to send the form and to see the solutions.</li>
+	 <li>Use numbers 1 to 4 to add vowels and special characters.	</ul>
+
+   </div>
 
 
 
