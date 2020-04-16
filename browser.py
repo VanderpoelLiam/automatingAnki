@@ -30,6 +30,7 @@ def loadWordReference(driver, word):
     driver.get(wordReferenceSite)
     wait.until(EC.presence_of_element_located((By.ID, 'articleWRD')))
     driver.execute_script("window.stop();")
+    listenForNext()
 
 def getImage(driver, sentence):
     imagesSite = 'https://www.google.com/search?q=' + sentence + '&sout=1&hl=en&tbm=isch&oq=v&gs_l=img.3..35i39l2j0l8.4861.6646.0.7238.1.1.0.0.0.0.90.90.1.1.0....0...1ac.1.34.img..0.1.90.SKWUGDKJMsg'

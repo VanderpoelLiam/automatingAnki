@@ -46,7 +46,6 @@ def main(word, driver):
     pasteExtraInfo(extraInfo)
 
     loadWordReference(driver, word)
-    listenForNext()
 
     sentence = getSentence(driver, sentenceSites)
     if wordInSentence(word, sentence):
