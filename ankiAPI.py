@@ -41,8 +41,3 @@ def storeMediaFile(filename, url):
         }
     }
     return(invoke(json))
-
-# url = "https://www.google.com/imgres?imgurl=https%3A%2F%2Fnatashaskitchen.com%2Fwp-content%2Fuploads%2F2017%2F04%2FHomemade-Sausage-2-600x900.jpg&imgrefurl=https%3A%2F%2Fnatashaskitchen.com%2Fhow-to-make-homemade-sausage-video%2F&tbnid=fmlCXs1txzc3bM&vet=12ahUKEwjmouKl0-3oAhVImp4KHehgCn8QMygBegUIARDUAg..i&docid=RrK28lPPmqI4LM&w=600&h=900&q=sausage&ved=2ahUKEwjmouKl0-3oAhVImp4KHehgCn8QMygBegUIARDUAg"
-# filename = "2.png"
-# print(storeMediaFile(filename, url))
-# print(addNote(deck, fields))
