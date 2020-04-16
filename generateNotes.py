@@ -8,7 +8,6 @@ from ankiAPI import addNote, storeMediaFile
 from browser import getDriver, loadWordReference, getImage, getTranslation, \
     getSentence, getDefinition
 
-
 class Note(object):
     """Represents an Anki Note."""
     WIKITIONARY = 'https://de.wiktionary.org/wiki/'
