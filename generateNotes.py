@@ -1,9 +1,12 @@
 import uuid
-from browser import getDriver, loadWordReference, getImage, getTranslation, \
-    getSentence, getDefinition
+import sys
+from re import search
+from webscraping import WikitionaryParser
 from listener import listenForCopy
 from pyperclip import paste
 from ankiAPI import addNote, storeMediaFile
+from browser import getDriver, loadWordReference, getImage, getTranslation, \
+    getSentence, getDefinition
 
 
 class Note(object):
@@ -15,8 +18,8 @@ class Note(object):
         super(Note, self).__init__()
         self.deck = deck
         self.word = word
-        self.wikitionarySite = WIKITIONARY + word
-        self.lingueeSite = LINGUEE + word
+        self.wikitionarySite = self.WIKITIONARY + word
+        self.lingueeSite = self.LINGUEE + word
 
     def setSentence(self, driver):
         sentenceSites = [self.wikitionarySite, self.lingueeSite]
@@ -27,20 +30,19 @@ class Note(object):
         return(searchResults is not None)
 
     def setBack(self):
-        if self._wordInSentence(self.word, self.sentence):
+        if self._wordInSentence():
             self.back = self.word
         else:
-            # TODO refactor this to avoid printing
             print("Copy word to blank out.")
             listenForCopy()
             self.back = paste()
 
-    def _blankOutWord(word, sentence):
-        return(sentence.replace(word, "___"))
+    def _blankOutBack(self):
+        return(self.sentence.replace(self.back, "___"))
 
     def _setBlankedOutSentence(self):
         # TODO - remove gender indicators from sentence if word is a noun
-        self.blankedOutSentence = self._blankOutWord(self.back, self.sentence)
+        self.blankedOutSentence = self._blankOutBack()
 
     def _setExtraInfo(self):
         wikiParser = WikitionaryParser(self.word)
@@ -49,13 +51,14 @@ class Note(object):
     def setDefinition(self, driver):
         self.definition = getDefinition(driver, [self.wikitionarySite])
 
-    def setImage(driver):
-        getImage(driver, sentence)
+    def setImage(self, driver):
+        getImage(driver, self.sentence)
         # TODO - move listener into getImage once this becomes main.py
         listenForCopy()
+        # TODO - getting the url is very annoying
         url = paste()
         filename = str(uuid.uuid4()) + ".png"
-        uploadImage(filename, url)
+        storeMediaFile(filename, url)
         self.picture = '<div><img src="' + filename + '"></div>'
 
     def _setFields(self):

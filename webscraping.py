@@ -72,13 +72,13 @@ class WikitionaryParser(object):
             singular = rawWordForms.split(",")[0]
             plural = rawWordForms.split("} ")[1]
             gender = self._getGender()
-            wordForms = gender + singular + "\n" + plural + "\n"
+            wordForms = gender + singular + "<br>" + plural + "<br>"
         if self._isVerb():
             rawWordForms = self._getRawWordForms()
             infinitif = rawWordForms.split(",")[0]
             praeterutum = rawWordForms.split("Prät.}} ")[1].split(",")[0]
             partizip = rawWordForms.split("Part.}} ")[1]
-            wordForms = infinitif + "\n" + praeterutum + "\n" + partizip + "\n"
+            wordForms = infinitif + "<br>" + praeterutum + "<br>" + partizip + "<br>"
         return wordForms
 
 ########################################################
