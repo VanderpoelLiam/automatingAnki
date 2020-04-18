@@ -47,7 +47,7 @@ class WikitionaryParser(object):
         wordType = arguments[0].value
         return wordType
 
-    def _isNoun(self):
+    def isNoun(self):
         return self._getWordType() == "Substantiv"
 
     def _isVerb(self):
@@ -66,7 +66,7 @@ class WikitionaryParser(object):
 
     def getWordForms(self):
         wordForms = ""
-        if self._isNoun():
+        if self.isNoun():
             rawWordForms = self._getRawWordForms()
             singular = rawWordForms.split(",")[0]
             plural = rawWordForms.split("} ")[1]
