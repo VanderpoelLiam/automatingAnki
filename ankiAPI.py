@@ -4,6 +4,7 @@
 # REQUIRES ANKI APP TO BE RUNNING IN THE BACKGROUND
 
 import requests
+import base64
 
 
 def invoke(json):
@@ -31,13 +32,17 @@ def addNote(deck, fields):
     }
     return(invoke(json))
 
-def storeMediaFile(filename, url):
+def storeMediaFile(filename):
+    with open(filename, "rb") as img:
+        data = base64.b64encode(img.read())
+
     json = {
         "action": "storeMediaFile",
         "version": 6,
         "params": {
             "filename": filename,
-            "url": url
+            "data": data
         }
     }
+
     return(invoke(json))

@@ -8,7 +8,10 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
 from listener import listenForCopy, listenForCopyAndNext, listenForNext, getCopyOccured, setCopyOccured
+from urllib.request import urlretrieve
+from pyautogui import click, press
 
 WORD_REFERENCE = 'https://www.wordreference.com/deen/'
 GOOGLE_TRANSLATE = 'https://translate.google.ca/#view=home&op=translate&sl=de&tl=en&text='
@@ -32,16 +35,19 @@ def loadWordReference(driver, word):
     driver.execute_script("window.stop();")
     listenForNext()
 
-def getImage(driver, sentence):
+def saveImage(filename):
+    click(button='right')
+    press('down', presses=10)
+    press('enter')
+    src = paste()
+    urlretrieve(src, filename)
+
+def getImage(driver, sentence, filename):
     imagesSite = 'https://www.google.com/search?q=' + sentence + '&sout=1&hl=en&tbm=isch&oq=v&gs_l=img.3..35i39l2j0l8.4861.6646.0.7238.1.1.0.0.0.0.90.90.1.1.0....0...1ac.1.34.img..0.1.90.SKWUGDKJMsg'
     driver.get(imagesSite)
+    print("Press 'enter' when mouse is hovering over the image.\n")
     listenForNext()
-    # TODO - automate below given I am hovering over the image
-    # or have somehow indicated which image I want
-    # Have to click on image
-    # Right click
-    # Click view image
-    # Copy image location
+    saveImage(filename)
 
 def getTranslation(driver, sentence):
     googleTranslateSite = GOOGLE_TRANSLATE + sentence

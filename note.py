@@ -3,6 +3,7 @@
 # note.py - Handles note creation in Anki
 
 import uuid
+import os
 from re import search
 from webscraping import WikitionaryParser
 from listener import listenForCopy
@@ -60,10 +61,10 @@ class Note(object):
         self.definition = getDefinition(driver, [self.wikitionarySite])
 
     def setImage(self, driver):
-        getImage(driver, self.sentence)
-        url = paste()
         filename = str(uuid.uuid4()) + ".png"
-        storeMediaFile(filename, url)
+        getImage(driver, self.sentence, filename)
+        storeMediaFile(filename)
+        os.remove(filename)
         self.picture = '<div><img src="' + filename + '"></div>'
 
     def _setFields(self):
