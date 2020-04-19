@@ -3,18 +3,12 @@
 # main.py - Assists creation of german anki card using word from the command
 # line or clipboard
 
-import sys
+import argparse
 from pyperclip import paste
 from browser import getDriver, loadWordReference, getTranslation
 from note import Note
+from listener import listenForCopy
 
-
-def getWord():
-    if len(sys.argv) > 1:
-        word = sys.argv[1]
-    else:
-        word = paste()
-    return(word)
 
 def main(word, driver):
     # note = Note("Generated Deck", word)
@@ -34,9 +28,26 @@ def main(word, driver):
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Create German Anki Cards.')
+    parser.add_argument('-r',
+                        required=False,
+                        action='store_true',
+                        default=False,
+                        help='Repeat the card creation process (t/F).')
+
+    parser.add_argument('--word',
+                        default=paste(),
+                        help='Create Anki Card with this word.')
+
+
+    args = parser.parse_args()
+
     try:
         driver = getDriver()
-        word = getWord()
-        main(word, driver)
+        main(args.word, driver)
+        while args.r:
+            print("Copy the next word.\n")
+            listenForCopy()
+            main(paste(), driver)
     finally:
         driver.quit()
