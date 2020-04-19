@@ -16,15 +16,10 @@ from pyautogui import click, press
 WORD_REFERENCE = 'https://www.wordreference.com/deen/'
 GOOGLE_TRANSLATE = 'https://translate.google.ca/#view=home&op=translate&sl=de&tl=en&text='
 
-def setBrowserLocation(driver):
-    driver.set_window_position(0, 0)
-    driver.set_window_size(960, 1053)
-
 def getDriver():
     capa = DesiredCapabilities.FIREFOX
     capa["pageLoadStrategy"] = "none"
     driver = webdriver.Firefox(desired_capabilities=capa)
-    setBrowserLocation(driver)
     return(driver)
 
 def loadWordReference(driver, word):
