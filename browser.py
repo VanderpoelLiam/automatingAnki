@@ -20,6 +20,7 @@ def getDriver():
     capa = DesiredCapabilities.FIREFOX
     capa["pageLoadStrategy"] = "none"
     driver = webdriver.Firefox(desired_capabilities=capa)
+    driver.maximize_window()
     return(driver)
 
 def loadWordReference(driver, word):
