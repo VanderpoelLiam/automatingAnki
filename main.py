@@ -17,7 +17,8 @@ def getWord():
     return(word)
 
 def main(word, driver):
-    note = Note("Generated Deck", word)
+    # note = Note("Generated Deck", word)
+    note = Note("German Words and Grammar", word)
 
     loadWordReference(driver, word)
 

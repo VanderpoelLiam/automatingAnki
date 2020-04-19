@@ -61,7 +61,6 @@ class Note(object):
 
     def setImage(self, driver):
         getImage(driver, self.sentence)
-        # TODO - getting the url is very annoying
         url = paste()
         filename = str(uuid.uuid4()) + ".png"
         storeMediaFile(filename, url)

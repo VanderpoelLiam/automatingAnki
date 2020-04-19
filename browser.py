@@ -35,7 +35,13 @@ def loadWordReference(driver, word):
 def getImage(driver, sentence):
     imagesSite = 'https://www.google.com/search?q=' + sentence + '&sout=1&hl=en&tbm=isch&oq=v&gs_l=img.3..35i39l2j0l8.4861.6646.0.7238.1.1.0.0.0.0.90.90.1.1.0....0...1ac.1.34.img..0.1.90.SKWUGDKJMsg'
     driver.get(imagesSite)
-    listenForCopy()
+    listenForNext()
+    # TODO - automate below given I am hovering over the image
+    # or have somehow indicated which image I want
+    # Have to click on image
+    # Right click
+    # Click view image
+    # Copy image location
 
 def getTranslation(driver, sentence):
     googleTranslateSite = GOOGLE_TRANSLATE + sentence
