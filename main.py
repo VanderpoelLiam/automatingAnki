@@ -43,6 +43,10 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     try:
+        # TODO: add option to edit card before continue
+        # TODO: noun matching should handle capitals
+        # TODO: add ability to select two words to blank out for
+        #       separable verbs
         driver = getDriver()
         main(args.word, driver)
         while args.r:
