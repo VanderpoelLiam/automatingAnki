@@ -9,7 +9,7 @@ from listener import listenForCopy
 from pyperclip import paste
 from ankiAPI import addNote, storeMediaFile
 from browser import getImage, getSentence, getDefinition
-from germanGenderIndicators import removeGenderIndicator
+from germanGenderIndicators import NounSentence
 
 
 class Note(object):
@@ -47,7 +47,8 @@ class Note(object):
 
     def _setBlankedOutSentence(self):
         if self.wikiParser.isNoun():
-            sentenceRemovedGender = removeGenderIndicator(self.sentence, self.back)
+            nounSentence = NounSentence(self.back, self.sentence)
+            sentenceRemovedGender = nounSentence.removeGenderIndicator()
             self.blankedOutSentence = self._blankOutBack(sentenceRemovedGender)
         else:
             self.blankedOutSentence = self._blankOutBack(self.sentence)

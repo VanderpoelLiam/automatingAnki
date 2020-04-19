@@ -2,46 +2,85 @@
 
 # germanGenderIndicators.py - Detects indicators of the gender of German nouns
 
+
 import re
-# https://en.wikipedia.org/wiki/German_declension
-# TODO: regex for decline like der i.e. all-, dies-, jed-, jen-, manch-, solch-, welch-
-# TODO: regex for decline like ein i.e. kein-, dein-, ihr-, euer-
-# TODO: test all definite articles
-# TODO: test one of each decline like ...
 
-indefiniteRegex = r"\b[Ee]in(e|en|em|es|er)?\b(?:\s+\w+)?\s+"
+class NounSentence(object):
+    """docstring for NounSentence."""
+    matchAdj = r"(?:\s+\w+)?\s+"
+    adjDecl = r"(e|er|en|em|es)\b"
+    indefDecl = "(e|en|em|es|er)"
+    defDecl = "(er|en|em|es|ie|as)"
 
-def getGenderIndicator(sentence, noun):
-    match = re.search(indefiniteRegex + noun, sentence)
-    indicator = re.sub(" " + noun, "", match.group())
-    return indicator
+    indefBeg = "([Mm]|[Ss]|[Dd]|[Kk])?[Ee]in"
+    indefRegex = r"\b" + indefBeg + indefDecl + r"?\b" + matchAdj
 
-def numWordsInStr(str):
-    return len(re.split(" ", str))
+    possesBeg = "([Ee]uer|[Ii]hr|[Uu]nser)"
+    possesRegex = r"\b" + possesBeg + indefDecl + r"?\b" + matchAdj
 
-def removeAdjectiveDeclination(adjective):
-    regex = r"(e|er|en|em|es)\b"
-    adjective = re.sub(regex, "", adjective)
-    return adjective
+    defBeg = "([Dd]|[Dd]ies)"
+    defRegex = r"\b" + defBeg + defDecl + r"?\b" + matchAdj
 
-def getIndicatorReplacement(indicator):
-    replacementAdjective = ""
+    def __init__(self, noun, sentence):
+        super(NounSentence, self).__init__()
+        self.noun = noun
+        self.sentence = sentence
 
-    if numWordsInStr(indicator) > 1:
-        indicator, adjective = re.split(" ", indicator)
-        replacementAdjective = " " + removeAdjectiveDeclination(adjective)
+    def _numWordsInStr(self, str):
+        return len(re.split(" ", str))
 
-    replacementIndicator = "ein"
+    def _setGenderIndicator(self):
+        match = re.search(self.indefRegex + self.noun, self.sentence)
+        if match is None:
+            match = re.search(self.defRegex + self.noun, self.sentence)
+        if match is None:
+            match = re.search(self.possesRegex + self.noun, self.sentence)
+        if match is None:
+            raise Exception("No gender indicator found.")
 
-    replacement = replacementIndicator + replacementAdjective
-    return "(" + replacement + ")"
+        self.matchStr = re.sub(" " + self.noun, "", match.group())
 
-def removeGenderIndicator(sentence, noun):
-    indicator = getGenderIndicator(sentence, noun)
-    replacement = getIndicatorReplacement(indicator)
-    sentenceRemovedGender = sentence.replace(indicator + " " + noun,
-                                             replacement + " " + noun)
-    return sentenceRemovedGender
+        if self._numWordsInStr(self.matchStr) > 1:
+            self.indicator, self.adjective = re.split(" ", self.matchStr)
+        else:
+            self.indicator = self.matchStr
+            self.adjective = ""
+
+    def _removeAdjectiveDeclination(self):
+        return re.sub(self.adjDecl, "", self.adjective)
+
+    def _removeIndicatorDeclination(self):
+        match = re.search("[Ee]in", self.indicator)
+        if match is not None:
+            return re.sub(self.indefDecl + r"\b", "", self.indicator)
+
+        match = re.search(self.possesBeg, self.indicator)
+        if match is not None:
+            return match.group()
+
+        match = re.search("[Dd]", self.indicator)
+        if match is not None:
+            return re.sub(self.defDecl + r"\b", "-", self.indicator)
+
+        raise Exception("Could not remove indicator declination.")
+
+    def _setReplacement(self):
+        if self.adjective != "":
+            replacementAdjective = " " + self._removeAdjectiveDeclination()
+            replacementIndicator = self._removeIndicatorDeclination()
+            replacement = replacementIndicator + replacementAdjective
+        else:
+            replacement = self._removeIndicatorDeclination()
+
+        self.replacement = "(" + replacement + ")"
+
+    def removeGenderIndicator(self):
+        self._setGenderIndicator()
+        self._setReplacement()
+        sentenceRemovedGender = self.sentence.replace(self.matchStr + " " + self.noun,
+                                                      self.replacement + " " + self.noun)
+        return sentenceRemovedGender
+
 
 import unittest
 
@@ -50,24 +89,32 @@ class TestGermanGenderIndicators(unittest.TestCase):
     def test_ein(self):
         noun = "Buch"
         sentence = "Sie dürfen ein beliebiges Buch lesen."
-        indicator = "ein beliebiges"
+        indicator = "ein"
         replacement = "(ein beliebig)"
         expected = "Sie dürfen (ein beliebig) Buch lesen."
 
-        self.assertEqual(getGenderIndicator(sentence, noun), indicator)
-        self.assertEqual(getIndicatorReplacement(indicator), replacement)
-        self.assertEqual(removeGenderIndicator(sentence, noun), expected)
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
 
     def test_einer(self):
         noun = "Wohnung"
-        sentence = "einer Damals wohten oft mehrere Familien in einer Wohnung."
+        sentence = "Damals wohten oft mehrere Familien in einer Wohnung."
         indicator = "einer"
         replacement = "(ein)"
-        expected = "einer Damals wohten oft mehrere Familien in (ein) Wohnung."
+        expected = "Damals wohten oft mehrere Familien in (ein) Wohnung."
 
-        self.assertEqual(getGenderIndicator(sentence, noun), indicator)
-        self.assertEqual(getIndicatorReplacement(indicator), replacement)
-        self.assertEqual(removeGenderIndicator(sentence, noun), expected)
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
 
     def test_eine(self):
         noun = "Aktion"
@@ -76,9 +123,13 @@ class TestGermanGenderIndicators(unittest.TestCase):
         replacement = "(ein)"
         expected = "Da kann man so (ein) Aktion im Grunde gleich sein lassen."
 
-        self.assertEqual(getGenderIndicator(sentence, noun), indicator)
-        self.assertEqual(getIndicatorReplacement(indicator), replacement)
-        self.assertEqual(removeGenderIndicator(sentence, noun), expected)
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
 
     def test_einen(self):
         noun = "Film"
@@ -87,9 +138,13 @@ class TestGermanGenderIndicators(unittest.TestCase):
         replacement = "(ein)"
         expected = "Ihr dürft (ein) Film sehen"
 
-        self.assertEqual(getGenderIndicator(sentence, noun), indicator)
-        self.assertEqual(getIndicatorReplacement(indicator), replacement)
-        self.assertEqual(removeGenderIndicator(sentence, noun), expected)
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
 
     def test_einem(self):
         noun = "Arzt"
@@ -98,9 +153,13 @@ class TestGermanGenderIndicators(unittest.TestCase):
         replacement = "(ein)"
         expected = "Ein Gespräch zwischen (ein) Arzt und einem Patienten muss immer vertraulich sein."
 
-        self.assertEqual(getGenderIndicator(sentence, noun), indicator)
-        self.assertEqual(getIndicatorReplacement(indicator), replacement)
-        self.assertEqual(removeGenderIndicator(sentence, noun), expected)
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
 
     def test_eines(self):
         noun = "Abends"
@@ -109,43 +168,224 @@ class TestGermanGenderIndicators(unittest.TestCase):
         replacement = "(ein)"
         expected = "hat mich (ein) Abends auf seine herrliche Terrasse gelockt"
 
-        self.assertEqual(getGenderIndicator(sentence, noun), indicator)
-        self.assertEqual(getIndicatorReplacement(indicator), replacement)
-        self.assertEqual(removeGenderIndicator(sentence, noun), expected)
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
 
-    # def test_mein(self):
-    #     noun = "Name"
-    #     sentence = "Mein Name hat 5 Buchstaben"
-    #     indicator = "Mein"
-    #     replacement = "(Mein)"
-    #     expected = "(Mein) Name hat 5 Buchstaben"
-    #
-    #     self.assertEqual(getGenderIndicator(sentence, noun), indicator)
-    #     self.assertEqual(getIndicatorReplacement(indicator), replacement)
-    #     self.assertEqual(removeGenderIndicator(sentence, noun), expected)
-    #
-    # def test_meinen(self):
-    #     noun = "Namen"
-    #     sentence = "Ich sagte meinen Namen"
-    #     indicator = "meinen"
-    #     replacement = "(mein)"
-    #     expected = "Ich sagte (mein) Namen"
-    #
-    #     self.assertEqual(getGenderIndicator(sentence, noun), indicator)
-    #     self.assertEqual(getIndicatorReplacement(indicator), replacement)
-    #     self.assertEqual(removeGenderIndicator(sentence, noun), expected)
-    #
-    # def test_des(self):
-    #     noun = "Buches"
-    #     sentence = "Die Zukunft des Buches ist schwer"
-    #     indicator = "des"
-    #     replacement = "(de...)"
-    #     expected = "Die Zukunft (de...) Buches ist schwer"
-    #
-    #     self.assertEqual(getGenderIndicator(sentence, noun), indicator)
-    #     self.assertEqual(getIndicatorReplacement(indicator), replacement)
-    #     self.assertEqual(removeGenderIndicator(sentence, noun), expected)
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
+
+    def test_der(self):
+        noun = "Klasse"
+        sentence = "Der Student steht hinten in der Klasse."
+        indicator = "der"
+        replacement = "(d-)"
+        expected = "Der Student steht hinten in (d-) Klasse."
+
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
+
+    def test_den(self):
+        noun = "Gewürzen"
+        sentence = "Mit den passenden Gewürzen wird dieser Auflauf sehr gut schmecken."
+        indicator = "den"
+        replacement = "(d- passend)"
+        expected = "Mit (d- passend) Gewürzen wird dieser Auflauf sehr gut schmecken."
+
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
+
+    def test_dem(self):
+        noun = "Regen"
+        sentence = "Ihr Regenschirm schützt Sie vor dem Regen."
+        indicator = "dem"
+        replacement = "(d-)"
+        expected = "Ihr Regenschirm schützt Sie vor (d-) Regen."
+
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
+
+    def test_des(self):
+        noun = "Spiels"
+        sentence = "Die Spannung während des Spiels war unglaublich."
+        indicator = "des"
+        replacement = "(d-)"
+        expected = "Die Spannung während (d-) Spiels war unglaublich."
+
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
+
+    def test_die(self):
+        noun = "Firma"
+        sentence = "Die Firma wirbt für ihre Produkte."
+        indicator = "Die"
+        replacement = "(D-)"
+        expected = "(D-) Firma wirbt für ihre Produkte."
+
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
+
+    def test_das(self):
+        noun = "Buch"
+        sentence = "Das Buch, dessen Autor unbekannt ist."
+        indicator = "Das"
+        replacement = "(D-)"
+        expected = "(D-) Buch, dessen Autor unbekannt ist."
+
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
+
+    def test_mein(self):
+        noun = "Name"
+        sentence = "Mein Name hat 5 Buchstaben"
+        indicator = "Mein"
+        replacement = "(Mein)"
+        expected = "(Mein) Name hat 5 Buchstaben"
+
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
+
+    def test_kein(self):
+        noun = "Namen"
+        sentence = "Ich sagte keinen Namen"
+        indicator = "keinen"
+        replacement = "(kein)"
+        expected = "Ich sagte (kein) Namen"
+
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
+
+    def test_dein(self):
+        noun = "Tasche"
+        sentence = "Das ist deine Tasche."
+        indicator = "deine"
+        replacement = "(dein)"
+        expected = "Das ist (dein) Tasche."
+
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
+
+    def test_ihr(self):
+        noun = "Angelegenheit"
+        sentence = "Das ist ihre Angelegenheit."
+        indicator = "ihre"
+        replacement = "(ihr)"
+        expected = "Das ist (ihr) Angelegenheit."
+
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
+
+    def test_euer(self):
+        noun = "Plan"
+        sentence = "Das ist euer Plan."
+        indicator = "euer"
+        replacement = "(euer)"
+        expected = "Das ist (euer) Plan."
+
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
+
+    def test_sein(self):
+        noun = "Löffel"
+        sentence = "Das ist sein Löffel. "
+        indicator = "sein"
+        replacement = "(sein)"
+        expected = "Das ist (sein) Löffel. "
+
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
+
+    def test_unser(self):
+        noun = "Angelegenheit"
+        sentence = "Das ist unsere Angelegenheit. "
+        indicator = "unsere"
+        replacement = "(unser)"
+        expected = "Das ist (unser) Angelegenheit. "
+
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
+
+    def test_dies(self):
+        noun = "Fall"
+        sentence = "In diesem Fall ist besondere Vorsicht geboten."
+        indicator = "diesem"
+        replacement = "(dies-)"
+        expected = "In (dies-) Fall ist besondere Vorsicht geboten."
+
+        testObj = NounSentence(noun, sentence)
+        testObj._setGenderIndicator()
+        testObj._setReplacement()
+
+        self.assertEqual(testObj.indicator, indicator)
+        self.assertEqual(testObj.replacement, replacement)
+        self.assertEqual(testObj.removeGenderIndicator(), expected)
 
 
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
+#     unittest.main()

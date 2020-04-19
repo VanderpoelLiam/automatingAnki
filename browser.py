@@ -8,7 +8,7 @@ from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from listener import listenForCopyAndNext, listenForNext, getCopyOccured, setCopyOccured
+from listener import listenForCopy, listenForCopyAndNext, listenForNext, getCopyOccured, setCopyOccured
 
 WORD_REFERENCE = 'https://www.wordreference.com/deen/'
 GOOGLE_TRANSLATE = 'https://translate.google.ca/#view=home&op=translate&sl=de&tl=en&text='
