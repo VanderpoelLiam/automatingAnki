@@ -36,15 +36,14 @@ class NounSentence(object):
         if match is None:
             match = re.search(self.possesRegex + self.noun, self.sentence)
         if match is None:
-            raise Exception("No gender indicator found.")
-
-        self.matchStr = re.sub(" " + self.noun, "", match.group())
-
-        if self._numWordsInStr(self.matchStr) > 1:
-            self.indicator, self.adjective = re.split(" ", self.matchStr)
+            self.indicator = ""
         else:
-            self.indicator = self.matchStr
-            self.adjective = ""
+            self.matchStr = re.sub(" " + self.noun, "", match.group())
+            if self._numWordsInStr(self.matchStr) > 1:
+                self.indicator, self.adjective = re.split(" ", self.matchStr)
+            else:
+                self.indicator = self.matchStr
+                self.adjective = ""
 
     def _removeAdjectiveDeclination(self):
         return re.sub(self.adjDecl, "", self.adjective)
@@ -62,8 +61,6 @@ class NounSentence(object):
         if match is not None:
             return re.sub(self.defDecl + r"\b", "-", self.indicator)
 
-        raise Exception("Could not remove indicator declination.")
-
     def _setReplacement(self):
         if self.adjective != "":
             replacementAdjective = " " + self._removeAdjectiveDeclination()
@@ -76,10 +73,11 @@ class NounSentence(object):
 
     def removeGenderIndicator(self):
         self._setGenderIndicator()
-        self._setReplacement()
-        sentenceRemovedGender = self.sentence.replace(self.matchStr + " " + self.noun,
-                                                      self.replacement + " " + self.noun)
-        return sentenceRemovedGender
+        if self.indicator != "":
+            self._setReplacement()
+            return self.sentence.replace(self.matchStr + " " + self.noun,
+                                         self.replacement + " " + self.noun)
+        return self.sentence
 
 
 import unittest
