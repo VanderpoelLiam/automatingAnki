@@ -47,6 +47,8 @@ if __name__ == '__main__':
         # TODO: noun matching should handle capitals
         # TODO: add ability to select two words to blank out for
         #       separable verbs
+        # TODO: select definition with number in Bedeutungen for
+        #       WikitionaryParser, same for Sentences in Beispielen
         driver = getDriver()
         main(args.word, driver)
         while args.r:
