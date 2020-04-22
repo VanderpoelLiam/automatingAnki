@@ -33,13 +33,10 @@ class WikitionaryParser(object):
         for template in self.templates:
             if template.name == "m":
                 gender = "der "
-                break
-            if template.name == "f":
+            elif template.name == "f":
                 gender = "die "
-                break
-            if template.name == "m":
+            else:
                 gender = "das "
-                break
         return gender
 
     def _getWordType(self):
