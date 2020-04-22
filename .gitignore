@@ -1,3 +1,4 @@
 steps.md
 python3/
 geckodriver.log
+__pycache__
