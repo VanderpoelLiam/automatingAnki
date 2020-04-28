@@ -33,9 +33,9 @@ class WikitionaryParser(object):
         for template in self.templates:
             if template.name == "m":
                 gender = "der "
-            elif template.name == "f":
+            if template.name == "f":
                 gender = "die "
-            else:
+            if template.name == "n":
                 gender = "das "
         return gender
 
